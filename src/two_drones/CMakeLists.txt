@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   geometry_msgs
+  gps_common
   hector_quadrotor_interface
 )
 
@@ -108,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES
- CATKIN_DEPENDS roscpp rospy std_msgs urdf hector_uav_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs urdf hector_uav_msgs gps_common
  DEPENDS
 )
 

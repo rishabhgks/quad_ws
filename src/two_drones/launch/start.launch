@@ -29,12 +29,12 @@
             controller/velocity
             controller/position
             "/>
-        </include>
+        </include>     
     </group>
     
-    <node pkg="two_drones" name="hover_node" type="hover_node.cpp" respawn="true"/>
+    <node pkg="two_drones" name="hover_node" type="hover_node" output="screen"/>
 
-      <!-- Start rviz visualization with preset config -->
-      <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_two_drone.rviz"/>
+    <!-- Start rviz visualization with preset config -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_two_drone.rviz"/>
 
 </launch>

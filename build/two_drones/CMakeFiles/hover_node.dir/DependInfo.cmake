@@ -19,6 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/rishabh/quad_ws/src/two_drones/include"
   "/home/rishabh/quad_ws/devel/include"
+  "/home/rishabh/quad_ws/src/gps_umd/gps_common/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_interface/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_uav_msgs/include"
   "/opt/ros/kinetic/include"

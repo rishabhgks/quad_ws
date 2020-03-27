@@ -742,6 +742,27 @@ gmock_build_tests:BOOL=OFF
 gmock_main_LIB_DEPENDS:STATIC=general;-lpthread;
 
 //Value Computed by CMake
+gps_common_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/gps_umd/gps_common
+
+//The directory containing a CMake configuration file for gps_common.
+gps_common_DIR:PATH=/home/rishabh/quad_ws/devel/share/gps_common/cmake
+
+//Value Computed by CMake
+gps_common_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/gps_umd/gps_common
+
+//Value Computed by CMake
+gps_umd_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/gps_umd/gps_umd
+
+//Value Computed by CMake
+gps_umd_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/gps_umd/gps_umd
+
+//Value Computed by CMake
+gpsd_client_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/gps_umd/gpsd_client
+
+//Value Computed by CMake
+gpsd_client_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/gps_umd/gpsd_client
+
+//Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/gtest/gtest
 
 //Dependencies for the target
@@ -1296,7 +1317,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=31
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=34
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1701,5 +1722,40 @@ __pkg_config_checked_OGRE:INTERNAL=1
 __pkg_config_checked_OGRE-Paging:INTERNAL=1
 __pkg_config_checked_OGRE_PKGC:INTERNAL=1
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
+__pkg_config_checked_libgps:INTERNAL=1
+libgps_CFLAGS:INTERNAL=
+libgps_CFLAGS_I:INTERNAL=
+libgps_CFLAGS_OTHER:INTERNAL=
+libgps_FOUND:INTERNAL=1
+libgps_INCLUDEDIR:INTERNAL=/usr/include
+libgps_INCLUDE_DIRS:INTERNAL=
+libgps_LDFLAGS:INTERNAL=-lgps
+libgps_LDFLAGS_OTHER:INTERNAL=
+libgps_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+libgps_LIBRARIES:INTERNAL=gps
+libgps_LIBRARY_DIRS:INTERNAL=
+libgps_LIBS:INTERNAL=
+libgps_LIBS_L:INTERNAL=
+libgps_LIBS_OTHER:INTERNAL=
+libgps_LIBS_PATHS:INTERNAL=
+libgps_PREFIX:INTERNAL=/usr
+libgps_STATIC_CFLAGS:INTERNAL=
+libgps_STATIC_CFLAGS_I:INTERNAL=
+libgps_STATIC_CFLAGS_OTHER:INTERNAL=
+libgps_STATIC_INCLUDE_DIRS:INTERNAL=
+libgps_STATIC_LDFLAGS:INTERNAL=-lgps
+libgps_STATIC_LDFLAGS_OTHER:INTERNAL=
+libgps_STATIC_LIBDIR:INTERNAL=
+libgps_STATIC_LIBRARIES:INTERNAL=gps
+libgps_STATIC_LIBRARY_DIRS:INTERNAL=
+libgps_STATIC_LIBS:INTERNAL=
+libgps_STATIC_LIBS_L:INTERNAL=
+libgps_STATIC_LIBS_OTHER:INTERNAL=
+libgps_STATIC_LIBS_PATHS:INTERNAL=
+libgps_VERSION:INTERNAL=3.15
+libgps_libgps_INCLUDEDIR:INTERNAL=
+libgps_libgps_LIBDIR:INTERNAL=
+libgps_libgps_PREFIX:INTERNAL=
+libgps_libgps_VERSION:INTERNAL=
 prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

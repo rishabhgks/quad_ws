@@ -92,32 +92,44 @@ motor_on_2 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motor
     msg4.angular.z = 0.0;
     msg4.angular.z = 0.0;
 
-    if(current_drone1_gps.altitude <= 4.95) {
-      move_drone1.publish(msg3);
-    } else if(current_drone1_gps.altitude > 5.05){
-      msg3.linear.z = -0.2;
-      move_drone1.publish(msg3);  
-    } else {
-      msg3.linear.z = 0;
-      move_drone1.publish(msg3);      
-    }
+    if(ros::Time::now().toSec() < 30) {
+      if(current_drone1_gps.altitude <= 4.95) {
+        move_drone1.publish(msg3);
+      } else if(current_drone1_gps.altitude > 5.05){
+        msg3.linear.z = -0.2;
+        move_drone1.publish(msg3);  
+      } else {
+        msg3.linear.z = 0;
+        move_drone1.publish(msg3);      
+      }
 
-    if(current_drone2_gps.altitude <= 4.95) {
-      move_drone2.publish(msg4);
-    } else if(current_drone2_gps.altitude > 5.05){
-      msg4.linear.z = -0.2;
-      move_drone2.publish(msg4);  
+      if(current_drone2_gps.altitude <= 4.95) {
+        move_drone2.publish(msg4);
+      } else if(current_drone2_gps.altitude > 5.05){
+        msg4.linear.z = -0.2;
+        move_drone2.publish(msg4);  
+      } else {
+        msg4.linear.z= 0;
+        move_drone2.publish(msg4);
+      }
     } else {
-      msg4.linear.z= 0;
-      move_drone2.publish(msg4);
+      if(current_drone1_gps.altitude > 0.05){
+        msg3.linear.z = -0.2;
+        move_drone1.publish(msg3);  
+      }
+      if(current_drone2_gps.altitude > 0.05){
+        msg4.linear.z = -0.1;
+        move_drone2.publish(msg4);  
+      }
     }
 
 
 // %EndTag(FILL_MESSAGE)%
 
 // %Tag(ROSCONSOLE)%
+    ROS_INFO("%f", ros::Time::now().toSec());
     // ROS_INFO("%s", msg.data.c_str());
-    ROS_INFO("%f %f", (current_drone1_gps.latitude - current_drone2_gps.latitude), (current_drone1_gps.longitude - current_drone2_gps.longitude));
+    // ROS_INFO("%f %f", (current_drone1_gps.latitude - current_drone2_gps.latitude), (current_drone1_gps.longitude - current_drone2_gps.longitude));
 
 // %EndTag(ROSCONSOLE)%
 

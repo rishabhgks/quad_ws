@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(gps_umd/gps_umd)
 subdirs(hector_models/hector_components_description)
 subdirs(hector_gazebo/hector_gazebo)
 subdirs(hector_gazebo/hector_gazebo_worlds)
@@ -18,6 +19,8 @@ subdirs(hector_gazebo/hector_sensors_gazebo)
 subdirs(hector_models/hector_xacro_tools)
 subdirs(hector_quadrotor/hector_uav_msgs)
 subdirs(hector_quadrotor/hector_quadrotor_model)
+subdirs(gps_umd/gps_common)
+subdirs(gps_umd/gpsd_client)
 subdirs(hector_gazebo/hector_gazebo_plugins)
 subdirs(hector_localization/hector_pose_estimation_core)
 subdirs(hector_localization/hector_pose_estimation)

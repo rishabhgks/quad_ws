@@ -96,6 +96,7 @@ hover_node_EXTERNAL_OBJECTS =
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /opt/ros/kinetic/lib/libmessage_filters.so
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_interface.so
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /opt/ros/kinetic/lib/libroscpp.so
 /home/rishabh/quad_ws/devel/lib/two_drones/hover_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
