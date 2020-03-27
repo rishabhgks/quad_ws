@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/rishabh/quad_ws/devel/include/**",
+                "/home/rishabh/catkin_ws/devel/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/rishabh/catkin_ws/src/dji_flight_control/include/**",
+                "/home/rishabh/catkin_ws/src/Onboard-SDK-ROS/dji_sdk/include/**",
+                "/home/rishabh/catkin_ws/src/Onboard-SDK-ROS/dji_sdk_demo/include/**",
+                "/home/rishabh/catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/include/**",
+                "/home/rishabh/catkin_ws/src/gazebo_ros_pkgs/gazebo_ros/include/**",
+                "/home/rishabh/catkin_ws/src/gazebo_ros_pkgs/gazebo_ros_control/include/**",
+                "/home/rishabh/catkin_ws/src/geographic_info/geodesy/include/**",
+                "/home/rishabh/quad_ws/src/hector_gazebo/hector_gazebo_plugins/include/**",
+                "/home/rishabh/quad_ws/src/hector_gazebo/hector_gazebo_thermal_camera/include/**",
+                "/home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation/include/**",
+                "/home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_actions/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controller_gazebo/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_gazebo_plugins/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_interface/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_model/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_pose_estimation/include/**",
+                "/home/rishabh/quad_ws/src/hector_quadrotor/hector_uav_msgs/include/**",
+                "/home/rishabh/catkin_ws/src/Onboard-SDK-ROS/rish_dji_flight/include/**",
+                "/home/rishabh/catkin_ws/src/rrt_exploration/include/**",
+                "/opt/ros/kinetic/share/tmc_julius/include/**",
+                "/opt/ros/kinetic/share/tmc_object_segmentation_node/include/**",
+                "/home/rishabh/catkin_ws/src/tuw_aruco/include/**",
+                "/home/rishabh/catkin_ws/src/tuw_uvc/include/**",
+                "/home/rishabh/catkin_ws/src/two_drones/include/**",
+                "/home/rishabh/catkin_ws/src/zed-ros-wrapper/zed_interfaces/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

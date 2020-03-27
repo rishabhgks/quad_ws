@@ -1,0 +1,8 @@
+prefix=/home/rishabh/quad_ws/install
+
+Name: two_drones
+Description: Description of two_drones
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs urdf hector_uav_msgs
