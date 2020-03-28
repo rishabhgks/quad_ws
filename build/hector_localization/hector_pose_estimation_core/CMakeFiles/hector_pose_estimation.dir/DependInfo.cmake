@@ -39,7 +39,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include"
   "/home/rishabh/quad_ws/devel/include"
-  "/home/rishabh/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"

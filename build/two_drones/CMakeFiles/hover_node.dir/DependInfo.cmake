@@ -19,9 +19,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/rishabh/quad_ws/src/two_drones/include"
   "/home/rishabh/quad_ws/devel/include"
-  "/home/rishabh/quad_ws/src/gps_umd/gps_common/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_interface/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_uav_msgs/include"
+  "/home/rishabh/quad_ws/src/geographic_info/geodesy/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
@@ -29,6 +29,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_interface/CMakeFiles/hector_quadrotor_interface.dir/DependInfo.cmake"
+  "/home/rishabh/quad_ws/build/geographic_info/geodesy/CMakeFiles/geoconv.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

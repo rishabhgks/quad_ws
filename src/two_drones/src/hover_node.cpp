@@ -3,7 +3,10 @@
 #include <sensor_msgs/Joy.h>
 #include <geometry_msgs/Twist.h>
 #include <sstream>
+#include <geodesy/utm.h>
 #include <hector_uav_msgs/EnableMotors.h>
+#include <geographic_msgs/GeoPoint.h>
+#include <geographic_msgs/GeoPose.h>
 #include "two_drones/hover_node.h"
 
 
@@ -12,6 +15,12 @@ int drone2_state = 0;
 
 sensor_msgs::NavSatFix current_drone1_gps;
 sensor_msgs::NavSatFix current_drone2_gps;
+
+geodesy::UTMPoint current_drone1_utm;
+geodesy::UTMPoint current_drone2_utm;
+
+geographic_msgs::GeoPoint d1_gp;
+geographic_msgs::GeoPoint d2_gp;
 
 ros::Publisher move_drone1;
 ros::Publisher move_drone2;
@@ -30,7 +39,6 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 // %EndTag(NODEHANDLE)%
 
-
 ros::Subscriber drone1_fix = n.subscribe("drone1/fix", 10, &drone1_gps_callback);
 ros::Subscriber drone2_fix = n.subscribe("drone2/fix", 10, &drone2_gps_callback);
 
@@ -41,11 +49,11 @@ motor_on_2 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motor
 
 // %Tag(PUBLISHER)%
   // ros::Publisher chatter_pub = n.advertise<sensor_msgs::Joy>("drone2/joy", 1);
-  move_drone1 = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
-  move_drone2 = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
+move_drone1 = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
+move_drone2 = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
 
-  drone1_enableMotors(true);
-  drone2_enableMotors(true);
+drone1_enableMotors(true);
+drone2_enableMotors(true);
 
 // %EndTag(PUBLISHER)%
 
@@ -127,7 +135,7 @@ motor_on_2 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motor
 // %EndTag(FILL_MESSAGE)%
 
 // %Tag(ROSCONSOLE)%
-    ROS_INFO("%f", ros::Time::now().toSec());
+    ROS_INFO("%f %f %f %f", current_drone1_utm.easting, current_drone2_utm.easting, current_drone1_utm.northing, current_drone2_utm.northing);
     // ROS_INFO("%s", msg.data.c_str());
     // ROS_INFO("%f %f", (current_drone1_gps.latitude - current_drone2_gps.latitude), (current_drone1_gps.longitude - current_drone2_gps.longitude));
 
@@ -156,10 +164,16 @@ motor_on_2 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motor
 
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
   current_drone1_gps = *msg;
+  geodesy::convert(current_drone1_gps, d1_gp);
+  geodesy::fromMsg(d1_gp, current_drone1_utm);
+  // utm_drone1.publish(current_drone1_utm);
 }
 
 void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
   current_drone2_gps = *msg;
+  geodesy::convert(current_drone2_gps, d2_gp);
+  geodesy::fromMsg(d2_gp, current_drone2_utm);
+  // utm_drone2.publish(current_drone2_utm);
 }
 
 bool drone1_enableMotors(bool enable)

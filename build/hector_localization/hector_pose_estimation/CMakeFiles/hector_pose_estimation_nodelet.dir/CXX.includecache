@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rishabh/catkin_ws/devel/include/geographic_msgs/GeoPoint.h
+/home/rishabh/quad_ws/devel/include/geographic_msgs/GeoPoint.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/rishabh/catkin_ws/devel/include/geographic_msgs/GeoPose.h
+/home/rishabh/quad_ws/devel/include/geographic_msgs/GeoPose.h
 string
 -
 vector

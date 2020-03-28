@@ -56,6 +56,16 @@ CMAKE_BINARY_DIR = /home/rishabh/quad_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -68,48 +78,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -122,16 +100,38 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : edit_cache/fast
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,36 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_nodejs: hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geographic_msgs_generate_messages_nodejs/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
-.PHONY : geographic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_lisp: hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_lisp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
-.PHONY : geographic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/rule:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/rule
 .PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/rule
@@ -209,126 +179,6 @@ hector_pose_estimation: hector_localization/hector_pose_estimation_core/CMakeFil
 hector_pose_estimation/fast:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/build
 .PHONY : hector_pose_estimation/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_cpp: hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_cpp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
-.PHONY : geographic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_py: hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_py
-
-# fast build rule for target.
-geographic_msgs_generate_messages_py/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
-.PHONY : geographic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_cpp: hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_cpp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_cpp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
-.PHONY : uuid_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_py: hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_py
-
-# fast build rule for target.
-uuid_msgs_generate_messages_py/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
-.PHONY : uuid_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_nodejs: hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-uuid_msgs_generate_messages_nodejs/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
-.PHONY : uuid_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_eus: hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_eus: hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_eus
-
-# fast build rule for target.
-geographic_msgs_generate_messages_eus/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
-.PHONY : geographic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-.PHONY : hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_lisp: hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_lisp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_lisp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make hector_localization/hector_pose_estimation_core/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
-.PHONY : uuid_msgs_generate_messages_lisp/fast
 
 src/filter.o: src/filter.cpp.o
 
@@ -903,24 +753,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... test"
-	@echo "... install/local"
 	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... geographic_msgs_generate_messages_nodejs"
-	@echo "... geographic_msgs_generate_messages_lisp"
-	@echo "... hector_pose_estimation"
-	@echo "... geographic_msgs_generate_messages_cpp"
-	@echo "... geographic_msgs_generate_messages_py"
-	@echo "... rebuild_cache"
-	@echo "... uuid_msgs_generate_messages_cpp"
-	@echo "... uuid_msgs_generate_messages_py"
-	@echo "... uuid_msgs_generate_messages_nodejs"
+	@echo "... install"
 	@echo "... edit_cache"
-	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... geographic_msgs_generate_messages_eus"
-	@echo "... uuid_msgs_generate_messages_lisp"
+	@echo "... rebuild_cache"
+	@echo "... hector_pose_estimation"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... test"
 	@echo "... src/filter.o"
 	@echo "... src/filter.i"
 	@echo "... src/filter.s"
