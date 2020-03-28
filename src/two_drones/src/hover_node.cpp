@@ -9,24 +9,26 @@
 #include <geographic_msgs/GeoPose.h>
 #include "two_drones/hover_node.h"
 
+// int drone1_state = 0;
+// int drone2_state = 0;
 
-int drone1_state = 0;
-int drone2_state = 0;
+// sensor_msgs::NavSatFix current_drone1_gps;
+// sensor_msgs::NavSatFix current_drone2_gps;
 
-sensor_msgs::NavSatFix current_drone1_gps;
-sensor_msgs::NavSatFix current_drone2_gps;
+// geodesy::UTMPoint current_drone1_utm;
+// geodesy::UTMPoint current_drone2_utm;
 
-geodesy::UTMPoint current_drone1_utm;
-geodesy::UTMPoint current_drone2_utm;
+// geographic_msgs::GeoPoint d1_gp;
+// geographic_msgs::GeoPoint d2_gp;
 
-geographic_msgs::GeoPoint d1_gp;
-geographic_msgs::GeoPoint d2_gp;
+// ros::Publisher move_drone1;
+// ros::Publisher move_drone2;
 
-ros::Publisher move_drone1;
-ros::Publisher move_drone2;
+// ros::ServiceClient motor_on_1;
+// ros::ServiceClient motor_on_2;
 
-ros::ServiceClient motor_on_1;
-ros::ServiceClient motor_on_2;
+Drone_Mission drone1;
+Drone_Mission drone2;
 
 int main(int argc, char **argv)
 {
@@ -39,21 +41,20 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 // %EndTag(NODEHANDLE)%
 
-ros::Subscriber drone1_fix = n.subscribe("drone1/fix", 10, &drone1_gps_callback);
-ros::Subscriber drone2_fix = n.subscribe("drone2/fix", 10, &drone2_gps_callback);
+drone1.fix = n.subscribe("drone1/fix", 10, &drone1_gps_callback);
+drone2.fix = n.subscribe("drone2/fix", 10, &drone2_gps_callback);
 
-
-motor_on_1 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone1/enable_motors");
-motor_on_2 = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motors");
+drone1.motor_on = n.serviceClient<hector_uav_msgs::EnableMotors>("drone1/enable_motors");
+drone2.motor_on = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motors");
 
 
 // %Tag(PUBLISHER)%
   // ros::Publisher chatter_pub = n.advertise<sensor_msgs::Joy>("drone2/joy", 1);
-move_drone1 = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
-move_drone2 = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
+drone1.move_drone = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
+drone2.move_drone = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
 
-drone1_enableMotors(true);
-drone2_enableMotors(true);
+drone1.enableMotors(true);
+drone2.enableMotors(true);
 
 // %EndTag(PUBLISHER)%
 
@@ -101,33 +102,27 @@ drone2_enableMotors(true);
     msg4.angular.z = 0.0;
 
     if(ros::Time::now().toSec() < 30) {
-      if(current_drone1_gps.altitude <= 4.95) {
-        move_drone1.publish(msg3);
-      } else if(current_drone1_gps.altitude > 5.05){
+      if(drone1.current_gps.altitude <= 4.95) {
+        drone1.move_drone.publish(msg3);
+      } else if(drone1.current_gps.altitude > 5.05){
         msg3.linear.z = -0.2;
-        move_drone1.publish(msg3);  
-      } else {
-        msg3.linear.z = 0;
-        move_drone1.publish(msg3);      
+        drone1.move_drone.publish(msg3);  
       }
 
-      if(current_drone2_gps.altitude <= 4.95) {
-        move_drone2.publish(msg4);
-      } else if(current_drone2_gps.altitude > 5.05){
+      if(drone2.current_gps.altitude <= 4.95) {
+        drone2.move_drone.publish(msg4);
+      } else if(drone2.current_gps.altitude > 5.05){
         msg4.linear.z = -0.2;
-        move_drone2.publish(msg4);  
-      } else {
-        msg4.linear.z= 0;
-        move_drone2.publish(msg4);
-      }
+        drone2.move_drone.publish(msg4);  
+      } 
     } else {
-      if(current_drone1_gps.altitude > 0.05){
-        msg3.linear.z = -0.2;
-        move_drone1.publish(msg3);  
+      if(drone1.current_gps.altitude > 0.05){
+        msg3.linear.z = -0.1;
+        drone1.move_drone.publish(msg3);  
       }
-      if(current_drone2_gps.altitude > 0.05){
+      if(drone2.current_gps.altitude > 0.05){
         msg4.linear.z = -0.1;
-        move_drone2.publish(msg4);  
+        drone2.move_drone.publish(msg4);  
       }
     }
 
@@ -135,7 +130,7 @@ drone2_enableMotors(true);
 // %EndTag(FILL_MESSAGE)%
 
 // %Tag(ROSCONSOLE)%
-    ROS_INFO("%f %f %f %f", current_drone1_utm.easting, current_drone2_utm.easting, current_drone1_utm.northing, current_drone2_utm.northing);
+    ROS_INFO("%f %f %f %f", drone1.current_utm.easting, drone2.current_utm.easting, drone1.current_utm.northing, drone2.current_utm.northing);
     // ROS_INFO("%s", msg.data.c_str());
     // ROS_INFO("%f %f", (current_drone1_gps.latitude - current_drone2_gps.latitude), (current_drone1_gps.longitude - current_drone2_gps.longitude));
 
@@ -161,43 +156,62 @@ drone2_enableMotors(true);
   return 0;
 }
 // %EndTag(FULLTEXT)%
+// void Drone_Mission::gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
+//   Drone_Mission::current_gps = *msg;
+//   geodesy::convert(Drone_Mission::current_gps, Drone_Mission::gp);
+//   geodesy::fromMsg(Drone_Mission::gp, Drone_Mission::current_utm);
+//   // utm_drone1.publish(current_drone1_utm);
+// }
+
+bool Drone_Mission::enableMotors(bool enable)
+{
+  if (!Drone_Mission::motor_on.waitForExistence(ros::Duration(5.0)))
+  {
+    ROS_WARN("Motor enable service not found");
+    return false;
+  }
+
+  hector_uav_msgs::EnableMotors srv;
+  srv.request.enable = enable;
+  return Drone_Mission::motor_on.call(srv);
+}
 
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
-  current_drone1_gps = *msg;
-  geodesy::convert(current_drone1_gps, d1_gp);
-  geodesy::fromMsg(d1_gp, current_drone1_utm);
+  drone1.current_gps = *msg;
+  geodesy::convert(drone1.current_gps, drone1.gp);
+  geodesy::fromMsg(drone1.gp, drone1.current_utm);
   // utm_drone1.publish(current_drone1_utm);
 }
 
 void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
-  current_drone2_gps = *msg;
-  geodesy::convert(current_drone2_gps, d2_gp);
-  geodesy::fromMsg(d2_gp, current_drone2_utm);
+  drone2.current_gps = *msg;
+  geodesy::convert(drone2.current_gps, drone2.gp);
+  geodesy::fromMsg(drone2.gp, drone2.current_utm);
   // utm_drone2.publish(current_drone2_utm);
 }
 
-bool drone1_enableMotors(bool enable)
-{
-  if (!motor_on_1.waitForExistence(ros::Duration(5.0)))
-  {
-    ROS_WARN("Motor enable service not found");
-    return false;
-  }
+// bool drone1_enableMotors(bool enable)
+// {
+//   if (!motor_on_1.waitForExistence(ros::Duration(5.0)))
+//   {
+//     ROS_WARN("Motor enable service not found");
+//     return false;
+//   }
 
-  hector_uav_msgs::EnableMotors srv;
-  srv.request.enable = enable;
-  return motor_on_1.call(srv);
-}
+//   hector_uav_msgs::EnableMotors srv;
+//   srv.request.enable = enable;
+//   return motor_on_1.call(srv);
+// }
 
-bool drone2_enableMotors(bool enable)
-{
-  if (!motor_on_2.waitForExistence(ros::Duration(5.0)))
-  {
-    ROS_WARN("Motor enable service not found");
-    return false;
-  }
+// bool drone2_enableMotors(bool enable)
+// {
+//   if (!motor_on_2.waitForExistence(ros::Duration(5.0)))
+//   {
+//     ROS_WARN("Motor enable service not found");
+//     return false;
+//   }
 
-  hector_uav_msgs::EnableMotors srv;
-  srv.request.enable = enable;
-  return motor_on_2.call(srv);
-}
+//   hector_uav_msgs::EnableMotors srv;
+//   srv.request.enable = enable;
+//   return motor_on_2.call(srv);
+// }
