@@ -6,10 +6,13 @@
 #include <ros/ros.h>
 #include <geometry_msgs/QuaternionStamped.h>
 #include <geometry_msgs/Vector3Stamped.h>
+#include <geometry_msgs/Twist.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/Joy.h>
 #include <std_msgs/UInt8.h>
-// #include <hector_uav_msgs/EnableMotors.h>
+#include <geodesy/utm.h>
+#include <geographic_msgs/GeoPoint.h>
+#include <hector_uav_msgs/EnableMotors.h>
 
 
 #include <tf/tf.h>
@@ -22,10 +25,16 @@
 class Drone_Mission{
 public:
     int state;
+    bool finished;
+    double mean_start_gps;
+
+    Drone_Mission():state(0), finished(false), mean_start_gps(0.0) {}
 
     ros::Subscriber fix;
 
     sensor_msgs::NavSatFix current_gps;
+
+    geometry_msgs::Twist motor_msg;
 
     geodesy::UTMPoint current_utm;
 
@@ -40,12 +49,10 @@ public:
     bool enableMotors(bool enable);
 };
 
+void step(Drone_Mission);
+
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
 
 void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
-
-bool drone1_enableMotors(bool enable);
-
-bool drone2_enableMotors(bool enable);
 
 #endif // HOVER_NODE_H
