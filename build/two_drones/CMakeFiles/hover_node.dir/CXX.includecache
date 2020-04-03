@@ -119,6 +119,8 @@ ros/ros.h
 -
 geometry_msgs/QuaternionStamped.h
 -
+geometry_msgs/Twist.h
+-
 geometry_msgs/Vector3Stamped.h
 -
 sensor_msgs/NavSatFix.h

@@ -5,6 +5,7 @@
 // ROS includes
 #include <ros/ros.h>
 #include <geometry_msgs/QuaternionStamped.h>
+#include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Vector3Stamped.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/Joy.h>
@@ -22,8 +23,16 @@
 class Drone_Mission{
 public:
     int state;
+    float mean_start_gps;
+    bool finished;
+
+    Drone_Mission() : state(0), finished(false), mean_start_gps(0.0) 
+    {
+    }
 
     ros::Subscriber fix;
+
+    geometry_msgs::Twist motor_msg;
 
     sensor_msgs::NavSatFix current_gps;
 
@@ -39,6 +48,8 @@ public:
 
     bool enableMotors(bool enable);
 };
+
+void step(Drone_Mission &drone);
 
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
 
