@@ -7,6 +7,7 @@
 #include <geometry_msgs/QuaternionStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Vector3Stamped.h>
+#include <geometry_msgs/Vector3Stamped.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/Joy.h>
 #include <std_msgs/UInt8.h>
@@ -24,7 +25,9 @@ class Drone_Mission{
 public:
     int state;
     float mean_start_gps;
+    float mean_start_mag_x;
     bool finished;
+    float direction;
 
     Drone_Mission() : state(0), finished(false), mean_start_gps(0.0) 
     {
@@ -32,9 +35,13 @@ public:
 
     ros::Subscriber fix;
 
+    ros::Subscriber magnetic;
+
     geometry_msgs::Twist motor_msg;
 
     sensor_msgs::NavSatFix current_gps;
+
+    geometry_msgs::Vector3Stamped current_magnetic;
 
     geodesy::UTMPoint current_utm;
 
@@ -54,6 +61,10 @@ void step(Drone_Mission &drone);
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
 
 void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
+
+void drone1_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
+
+void drone2_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
 
 bool drone1_enableMotors(bool enable);
 

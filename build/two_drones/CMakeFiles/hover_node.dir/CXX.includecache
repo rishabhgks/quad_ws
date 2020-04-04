@@ -123,6 +123,8 @@ geometry_msgs/Twist.h
 -
 geometry_msgs/Vector3Stamped.h
 -
+geometry_msgs/Vector3Stamped.h
+-
 sensor_msgs/NavSatFix.h
 -
 sensor_msgs/Joy.h
@@ -152,6 +154,8 @@ hector_uav_msgs/EnableMotors.h
 geographic_msgs/GeoPoint.h
 -
 geographic_msgs/GeoPose.h
+-
+cmath
 -
 two_drones/hover_node.h
 /home/rishabh/quad_ws/src/two_drones/src/two_drones/hover_node.h
