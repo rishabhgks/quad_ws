@@ -540,6 +540,9 @@ OGRE_Volume_LIBRARY_FWK:STRING=NOTFOUND
 //x
 OGRE_Volume_LIBRARY_REL:FILEPATH=/usr/lib/x86_64-linux-gnu/libOgreVolume.so
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
+
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
@@ -668,6 +671,15 @@ controller_manager_msgs_DIR:PATH=/opt/ros/kinetic/share/controller_manager_msgs/
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
 
 //Dependencies for the target
 diffdrive_plugin_6w_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_math.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ccd.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libprotobuf.so;debug;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;/usr/lib/x86_64-linux-gnu/libignition-math2.so;general;OgreMain;general;pthread;general;/usr/lib/x86_64-linux-gnu/libignition-math2.so;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
@@ -1072,14 +1084,20 @@ hector_xacro_tools_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/hector_models/hec
 //The directory containing a CMake configuration file for ignition-math2.
 ignition-math2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math2
 
+//The directory containing a CMake configuration file for image_geometry.
+image_geometry_DIR:PATH=/opt/ros/kinetic/share/image_geometry/cmake
+
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
 //The directory containing a CMake configuration file for joint_limits_interface.
 joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cmake
 
+//The directory containing a CMake configuration file for joy.
+joy_DIR:PATH=/opt/ros/kinetic/share/joy/cmake
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libtf2.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -1184,6 +1202,69 @@ trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
 transmission_interface_DIR:PATH=/opt/ros/kinetic/share/transmission_interface/cmake
 
 //Value Computed by CMake
+turtlebot_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_actions_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot_apps/turtlebot_actions
+
+//Value Computed by CMake
+turtlebot_actions_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot_apps/turtlebot_actions
+
+//Value Computed by CMake
+turtlebot_apps_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot_apps/turtlebot_apps
+
+//Value Computed by CMake
+turtlebot_apps_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot_apps/turtlebot_apps
+
+//Value Computed by CMake
+turtlebot_bringup_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_bringup_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_calibration_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot_apps/turtlebot_calibration
+
+//Value Computed by CMake
+turtlebot_calibration_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot_apps/turtlebot_calibration
+
+//Value Computed by CMake
+turtlebot_capabilities_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_capabilities_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_description_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_description_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_follower_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot_apps/turtlebot_follower
+
+//Value Computed by CMake
+turtlebot_follower_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot_apps/turtlebot_follower
+
+//The directory containing a CMake configuration file for turtlebot_msgs.
+turtlebot_msgs_DIR:PATH=turtlebot_msgs_DIR-NOTFOUND
+
+//Value Computed by CMake
+turtlebot_rapps_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot_apps/turtlebot_rapps
+
+//Value Computed by CMake
+turtlebot_rapps_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot_apps/turtlebot_rapps
+
+//Value Computed by CMake
+turtlebot_teleop_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/turtlebot/turtlebot_teleop
+
+//Value Computed by CMake
+turtlebot_teleop_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/turtlebot/turtlebot_teleop
+
+//Value Computed by CMake
 two_drones_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/two_drones
 
 //Value Computed by CMake
@@ -1200,6 +1281,9 @@ uuid_msgs_DIR:PATH=/opt/ros/kinetic/share/uuid_msgs/cmake
 
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/kinetic/share/visualization_msgs/cmake
+
+//The directory containing a CMake configuration file for xacro.
+xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -1350,7 +1434,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=37
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=42
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1393,6 +1477,8 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //Details about finding Eigen
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/opt/ros/kinetic][v3.3.1()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Protobuf

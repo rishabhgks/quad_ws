@@ -10,8 +10,11 @@
 #include <cmath>
 #include "two_drones/hover_node.h"
 
-Drone_Mission drone1;
-Drone_Mission drone2;
+Drone_Mission drone1("drone1");
+Drone_Mission drone2("drone2");
+
+// Pose pose_;
+// Pose drone2_pose_;
 
 int main(int argc, char **argv)
 {
@@ -23,6 +26,9 @@ int main(int argc, char **argv)
 // %Tag(NODEHANDLE)%
   ros::NodeHandle n;
 // %EndTag(NODEHANDLE)%
+
+Pose drone1_pose_("/drone1/action/pose", true);;
+Pose drone2_pose_("/drone2/action/pose", true);
 
 drone1.fix = n.subscribe("drone1/fix", 10, &drone1_gps_callback);
 drone2.fix = n.subscribe("drone2/fix", 10, &drone2_gps_callback);
@@ -38,9 +44,17 @@ drone2.motor_on = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_
 drone1.move_drone = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
 drone2.move_drone = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
 
+// drone1.map = n.advertise<nav_msgs::OccupancyGrid>("drone1/map", 1);
+// drone2.map = n.advertise<nav_msgs::OccupancyGrid>("drone2/map", 1);
+
+drone1.Y_POS = -1;
+drone2.Y_POS = 1;
+
 drone1.enableMotors(true);
 drone2.enableMotors(true);
 
+drone1_maintain_altitude(3, drone1_pose_);
+drone2_maintain_altitude(3, drone2_pose_);
 // %EndTag(PUBLISHER)%
 
 // %Tag(LOOP_RATE)%
@@ -63,9 +77,7 @@ drone2.enableMotors(true);
       // ROS_INFO("Easting Difference: %f Northing Difference: %f Distance: %f", drone1.current_utm.easting - drone2.current_utm.easting, 
       // drone1.current_utm.northing - drone2.current_utm.northing, 
       // sqrt(pow(drone1.current_utm.easting - drone2.current_utm.easting, 2) + pow(drone1.current_utm.northing - drone2.current_utm.northing, 2)));
-    }    
-
-
+    }  
 // %EndTag(FILL_MESSAGE)%
 
 // %Tag(ROSCONSOLE)%
@@ -168,6 +180,52 @@ bool Drone_Mission::enableMotors(bool enable)
   hector_uav_msgs::EnableMotors srv;
   srv.request.enable = enable;
   return Drone_Mission::motor_on.call(srv);
+}
+
+void drone1_maintain_altitude(float height1, Pose &pose1_) {
+  ROS_INFO("Waiting for action server to start.");
+  // wait for the action server to start
+  pose1_.waitForServer();
+  ROS_INFO("Action server started, sending goal.");
+  drone1.pose_goal.target_pose = drone1.pose_feedback.feedback.current_pose;
+  drone1.pose_goal.target_pose.pose.position.z = height1;
+  drone1.pose_goal.target_pose.pose.position.y = drone1.Y_POS;
+  ROS_INFO("Goal prepared");
+  drone1.pose_goal.target_pose.header.frame_id = "drone1/world";
+  pose1_.sendGoal(drone1.pose_goal, &doneCb, &activeCb, &feedbackCb);
+  ROS_INFO("Goal Sent");
+  pose1_.waitForResult(ros::Duration(30.0));
+
+  if (pose1_.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+  {
+      actionlib::SimpleClientGoalState state = pose1_.getState();
+      ROS_INFO("Action finished: %s",state.toString().c_str());
+  }
+  else
+      ROS_INFO("Action did not finish before the time out."); 
+}
+
+void drone2_maintain_altitude(float height2, Pose &pose2_) {
+  ROS_INFO("Waiting for action server to start.");
+  // wait for the action server to start
+  pose2_.waitForServer();
+  ROS_INFO("Action server started, sending goal.");
+  drone2.pose_goal.target_pose = drone2.pose_feedback.feedback.current_pose;
+  drone2.pose_goal.target_pose.pose.position.z = height2;
+  drone2.pose_goal.target_pose.pose.position.y = drone2.Y_POS;
+  ROS_INFO("Goal prepared");
+  drone2.pose_goal.target_pose.header.frame_id = "drone2/world";
+  ROS_INFO("Goal Sent");
+  pose2_.sendGoal(drone2.pose_goal);
+  pose2_.waitForResult(ros::Duration(30.0));
+
+  if (pose2_.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+  {
+      actionlib::SimpleClientGoalState state = pose2_.getState();
+      ROS_INFO("Action finished: %s",state.toString().c_str());
+  }
+  else
+      ROS_INFO("Action did not finish before the time out."); 
 }
 
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
@@ -304,3 +362,31 @@ void drone1_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg
 void drone2_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg) {
   drone2.current_magnetic = *msg;
 }
+
+void drone1_map_callback(const nav_msgs::OccupancyGrid::ConstPtr& msg){
+  drone1.map_data = *msg;
+}
+
+void drone2_map_callback(const nav_msgs::OccupancyGrid::ConstPtr& msg){
+  drone2.map_data = *msg;
+}
+
+void doneCb(const actionlib::SimpleClientGoalState& state,
+            const hector_uav_msgs::PoseResultConstPtr& result)
+{
+  ROS_INFO("Finished in state [%s]", state.toString().c_str());
+//   ROS_INFO("Answer: %s", result->status);
+}
+
+// Called once when the goal becomes active
+void activeCb()
+{
+  ROS_INFO("Goal just went active");
+}
+
+// Called every time feedback is received for the goal
+void feedbackCb(const hector_uav_msgs::PoseFeedbackConstPtr& feedback)
+{
+  ROS_INFO("Got Feedback of action %f %f %f", feedback->current_pose.pose.position.x, feedback->current_pose.pose.position.y, feedback->current_pose.pose.position.z);
+}
+

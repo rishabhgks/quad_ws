@@ -1,0 +1,24 @@
+digraph G {
+"drone1/base_link" -> "drone1/front_cam_link"[label="Broadcaster: /drone1/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone1/base_stabilized" -> "drone1/base_link"[label="Broadcaster: /drone1/ground_truth_to_tf\nAverage rate: 100.223 Hz\nMost recent transform: 11.845 ( 0.021 sec old)\nBuffer length: 4.490 sec\n"];
+"drone1/front_cam_link" -> "drone1/front_cam_optical_frame"[label="Broadcaster: /drone1/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone1/base_link" -> "drone1/laser0_frame"[label="Broadcaster: /drone1/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone1/base_link" -> "drone1/sonar_link"[label="Broadcaster: /drone1/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone2/base_link" -> "drone2/front_cam_link"[label="Broadcaster: /drone2/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone2/base_stabilized" -> "drone2/base_link"[label="Broadcaster: /drone2/ground_truth_to_tf\nAverage rate: 100.222 Hz\nMost recent transform: 11.847 ( 0.019 sec old)\nBuffer length: 4.500 sec\n"];
+"drone2/front_cam_link" -> "drone2/front_cam_optical_frame"[label="Broadcaster: /drone2/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone2/base_link" -> "drone2/laser0_frame"[label="Broadcaster: /drone2/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone2/base_link" -> "drone2/sonar_link"[label="Broadcaster: /drone2/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 11.866 sec old)\nBuffer length: 0.000 sec\n"];
+"drone2/world" -> "drone2/base_footprint"[label="Broadcaster: /drone2/ground_truth_to_tf\nAverage rate: 100.222 Hz\nMost recent transform: 11.847 ( 0.019 sec old)\nBuffer length: 4.500 sec\n"];
+"drone2/base_footprint" -> "drone2/base_stabilized"[label="Broadcaster: /drone2/ground_truth_to_tf\nAverage rate: 100.222 Hz\nMost recent transform: 11.847 ( 0.019 sec old)\nBuffer length: 4.500 sec\n"];
+"drone1/world" -> "drone1/base_footprint"[label="Broadcaster: /drone1/ground_truth_to_tf\nAverage rate: 100.223 Hz\nMost recent transform: 11.845 ( 0.021 sec old)\nBuffer length: 4.490 sec\n"];
+"drone1/base_footprint" -> "drone1/base_stabilized"[label="Broadcaster: /drone1/ground_truth_to_tf\nAverage rate: 100.223 Hz\nMost recent transform: 11.845 ( 0.021 sec old)\nBuffer length: 4.490 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 11.866"[ shape=plaintext ] ;
+ }->"drone2/world";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 11.866"[ shape=plaintext ] ;
+ }->"drone1/world";
+}

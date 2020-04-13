@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   geometry_msgs
+  hector_uav_msgs
   hector_quadrotor_interface
   geodesy
   geographic_msgs
@@ -155,6 +156,14 @@ target_link_libraries(hover_node
   ${catkin_LIBRARIES}
 )
 
+add_executable(takeoff_node src/takeoff_node.cpp)
+
+target_link_libraries(takeoff_node
+  ${catkin_LIBRARIES}
+)
+add_dependencies(takeoff_node ${catkin_EXPORTED_TARGETS})
+
+
 #############
 ## Install ##
 #############
@@ -185,6 +194,12 @@ target_link_libraries(hover_node
 
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+)
+
+install(DIRECTORY include/hector_uav_msgs/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE
