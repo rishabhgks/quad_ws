@@ -37,15 +37,35 @@ int main(int argc, char **argv)
     // %EndTag(INIT)%
 
     std::string ns = ros::this_node::getNamespace();
-    ns = ns.substr(2, ns.length());
-    ROS_INFO("%s", ns.c_str());
     if(ns.length() > 1) {
-        ns += "/";
+      ns = ns.substr(2, ns.length());
+      ROS_INFO("%s", ns.c_str());
+      ns += "/";
+    } else {
+      ns="";
     }
     ROS_INFO("Pose name: %s", (ns + POSE_NAME).c_str());
     float Y_POS = 1.0;
-    if(argc > 1) {
-        Y_POS = atof(argv[1]);
+    float X_POS = 0.0;
+    float Z_POS = 4.0;
+    switch(argc) {
+      case 1:
+        break;
+      case 2:
+        X_POS = atof(argv[1]);
+        break;
+      case 3:
+        X_POS = atof(argv[1]);
+        Y_POS = atof(argv[2]);
+        break;
+      case 4:
+        X_POS = atof(argv[1]);
+        Y_POS = atof(argv[2]);
+        Z_POS = atof(argv[3]);
+        break;
+      default:
+        ROS_INFO("Invalid entry");
+        break;
     }
 
     // %Tag(NODEHANDLE)%
@@ -66,8 +86,9 @@ int main(int argc, char **argv)
     hector_uav_msgs::PoseGoal pose_goal;
     ROS_INFO("Current pose %f", pose_feedback.feedback.current_pose.pose.position.z);
     pose_goal.target_pose = pose_feedback.feedback.current_pose;
-    pose_goal.target_pose.pose.position.z = 3.0;
+    pose_goal.target_pose.pose.position.x = X_POS;
     pose_goal.target_pose.pose.position.y = Y_POS;
+    pose_goal.target_pose.pose.position.z = Z_POS;
     ROS_INFO("%s", (ns + std::string("world")).c_str());
     pose_goal.target_pose.header.frame_id = ns + "world";
     pose_.sendGoal(pose_goal, &doneCb, &activeCb, &feedbackCb);

@@ -863,7 +863,6 @@ hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimatio
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurement.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/devel/include/hector_pose_estimation/matrix_config.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/devel/include/hector_uav_msgs/Altimeter.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/hector_pose_estimation/Eigen/MatrixBaseAddons.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/hector_pose_estimation/Eigen/QuaternionBaseAddons.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/hector_pose_estimation/collection.h
@@ -891,25 +890,15 @@ hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimatio
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/hector_pose_estimation/system_model.inl
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/include/hector_pose_estimation/types.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /home/rishabh/quad_ws/src/hector_localization/hector_pose_estimation_core/src/measurements/baro.cpp
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/builtin_message_traits.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/console.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/console_backend.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/datatypes.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/duration.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/exception.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/macros.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/message_forward.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/message_operations.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/message_traits.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/platform.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/roscpp_serialization_macros.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/rostime_decl.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/serialization.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/serialized_message.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/time.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/ros/types.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
-hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /usr/include/eigen3/Eigen/Cholesky
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /usr/include/eigen3/Eigen/Core
 hector_localization/hector_pose_estimation_core/CMakeFiles/hector_pose_estimation.dir/src/measurements/baro.cpp.o: /usr/include/eigen3/Eigen/Geometry

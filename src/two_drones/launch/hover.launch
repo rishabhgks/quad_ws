@@ -10,7 +10,8 @@
         <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >
             <arg name="tf_prefix" value="drone1" />
             <arg name="name" value="drone1" />
-            <arg name="y" value="-1.0" />
+            <arg name="x" value="-5.0" />
+            <arg name="y" value="-20.0" />
             <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/>
             <arg name="controllers" value="
             controller/attitude
@@ -19,31 +20,32 @@
             "/>
         </include>
         <include file="$(find two_drones)/launch/quadrotor_gmapping.launch" >
-            <arg name="scan_topic"  default="/drone1/scan" />
-            <arg name="base_frame"  default="/drone1/base_footprint"/>
-            <arg name="odom_frame"  default="/drone1/world"/>
+            <arg name="scan_topic"  value="/drone1/scan" />
+            <arg name="base_frame"  value="/drone1/base_footprint"/>
+            <arg name="odom_frame"  value="/drone1/world"/>
         </include>
-        <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_drone1_broadcaster" args="0 0 0 0 0 0 map drone1/map 100"/>
+        <node pkg="tf" type="static_transform_publisher" name="map_to_drone1_broadcaster" args="0 0 0 0 0 0 map drone1/map 100"/>
         <include file="$(find two_drones)/launch/quadrotor_localization.launch" >
-            <arg name="scan_topic"  default="/drone1/scan" />
-            <arg name="base_frame_id"  default="/drone1/base_footprint"/>
-            <arg name="odom_frame_id"  default="/drone1/world"/>
-            <arg name="global_frame_id"  default="/drone1/map"/>
-        </include> -->
-        <!-- <include file="$(find two_drones)/launch/quadrotor_move_base.launch" >
-            <arg name="base_frame_id"  default="/drone2/base_footprint"/>
-            <arg name="odom_frame_id"  default="/drone2/world"/>
-            <arg name="global_frame_id"  default="/drone2/map"/>
-            <arg name="odom_topic" default="ground_truth/state" />
-            <arg name="laser_topic" default="/drone2/scan" />
-        </include> -->
+            <arg name="scan_topic"  value="/drone1/scan" />
+            <arg name="base_frame_id"  value="/drone1/base_footprint"/>
+            <arg name="odom_frame_id"  value="/drone1/world"/>
+            <arg name="global_frame_id"  value="/drone1/map"/>
+        </include>
+        <include file="$(find two_drones)/launch/quadrotor_move_base.launch" >
+            <arg name="base_frame_id"  value="/drone1/base_footprint"/>
+            <arg name="odom_frame_id"  value="/drone1/world"/>
+            <arg name="global_frame_id"  value="/drone1/map"/>
+            <arg name="odom_topic" value="ground_truth/state" />
+            <arg name="laser_topic" value="/drone1/scan" />
+        </include>
     </group>
 
     <group ns="drone2">
         <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >
             <arg name="tf_prefix" value="drone2" />
             <arg name="name" value="drone2" />
-            <arg name="y" value="1.0" />
+            <arg name="x" value="-9.0" />
+            <arg name="y" value="22.0" />
             <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/>
             <arg name="controllers" value="
             controller/attitude
@@ -56,20 +58,20 @@
             <arg name="base_frame"  default="/drone2/base_footprint"/>
             <arg name="odom_frame"  default="/drone2/world"/>
         </include>
-        <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_drone2_broadcaster" args="0 0 0 0 0 0 map drone2/map 100"/>
+        <node pkg="tf" type="static_transform_publisher" name="map_to_drone2_broadcaster" args="0 0 0 0 0 0 map drone2/map 100"/>
         <include file="$(find two_drones)/launch/quadrotor_localization.launch" >
-            <arg name="scan_topic"  default="/drone1/scan" />
-            <arg name="base_frame_id"  default="/drone1/base_footprint"/>
-            <arg name="odom_frame_id"  default="/drone1/world"/>
-            <arg name="global_frame_id"  default="/drone1/map"/>
-        </include> -->
-        <!-- <include file="$(find two_drones)/launch/quadrotor_move_base.launch" >
+            <arg name="scan_topic"  default="/drone2/scan" />
+            <arg name="base_frame_id"  default="/drone2/base_footprint"/>
+            <arg name="odom_frame_id"  default="/drone2/world"/>
+            <arg name="global_frame_id"  default="/drone2/map"/>
+        </include>
+        <include file="$(find two_drones)/launch/quadrotor_move_base.launch" >
             <arg name="base_frame_id"  default="/drone2/base_footprint"/>
             <arg name="odom_frame_id"  default="/drone2/world"/>
             <arg name="global_frame_id"  default="/drone2/map"/>
             <arg name="odom_topic" default="ground_truth/state" />
             <arg name="laser_topic" default="/drone2/scan" />
-        </include> -->
+        </include>
     </group>
     
     <!-- <include file="$(find two_drones)/launch/quadrotor_gmapping.launch" >
@@ -95,6 +97,6 @@
     <node pkg="two_drones" name="hover_node" type="hover_node" output="screen"/>
 
     <!-- Start rviz visualization with preset config -->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_two_drone_map.rviz"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_two_drone_map_task1.rviz"/>
 
 </launch>

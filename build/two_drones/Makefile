@@ -181,6 +181,21 @@ hover_node/fast:
 .PHONY : hover_node/fast
 
 # Convenience name for target.
+two_drones/CMakeFiles/obstacle_avoidance.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/obstacle_avoidance.dir/rule
+.PHONY : two_drones/CMakeFiles/obstacle_avoidance.dir/rule
+
+# Convenience name for target.
+obstacle_avoidance: two_drones/CMakeFiles/obstacle_avoidance.dir/rule
+
+.PHONY : obstacle_avoidance
+
+# fast build rule for target.
+obstacle_avoidance/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/build
+.PHONY : obstacle_avoidance/fast
+
+# Convenience name for target.
 two_drones/CMakeFiles/takeoff_node.dir/rule:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/takeoff_node.dir/rule
 .PHONY : two_drones/CMakeFiles/takeoff_node.dir/rule
@@ -222,6 +237,33 @@ src/hover_node.cpp.s:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/hover_node.dir/build.make two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.s
 .PHONY : src/hover_node.cpp.s
 
+src/obstacle_avoidance.o: src/obstacle_avoidance.cpp.o
+
+.PHONY : src/obstacle_avoidance.o
+
+# target to build an object file
+src/obstacle_avoidance.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.o
+.PHONY : src/obstacle_avoidance.cpp.o
+
+src/obstacle_avoidance.i: src/obstacle_avoidance.cpp.i
+
+.PHONY : src/obstacle_avoidance.i
+
+# target to preprocess a source file
+src/obstacle_avoidance.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.i
+.PHONY : src/obstacle_avoidance.cpp.i
+
+src/obstacle_avoidance.s: src/obstacle_avoidance.cpp.s
+
+.PHONY : src/obstacle_avoidance.s
+
+# target to generate assembly for a file
+src/obstacle_avoidance.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.s
+.PHONY : src/obstacle_avoidance.cpp.s
+
 src/takeoff_node.o: src/takeoff_node.cpp.o
 
 .PHONY : src/takeoff_node.o
@@ -261,12 +303,16 @@ help:
 	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... hover_node"
-	@echo "... takeoff_node"
+	@echo "... obstacle_avoidance"
 	@echo "... install/local"
+	@echo "... takeoff_node"
 	@echo "... install/strip"
 	@echo "... src/hover_node.o"
 	@echo "... src/hover_node.i"
 	@echo "... src/hover_node.s"
+	@echo "... src/obstacle_avoidance.o"
+	@echo "... src/obstacle_avoidance.i"
+	@echo "... src/obstacle_avoidance.s"
 	@echo "... src/takeoff_node.o"
 	@echo "... src/takeoff_node.i"
 	@echo "... src/takeoff_node.s"

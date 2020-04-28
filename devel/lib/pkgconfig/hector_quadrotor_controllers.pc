@@ -3,6 +3,6 @@ prefix=/home/rishabh/quad_ws/devel
 Name: hector_quadrotor_controllers
 Description: Description of hector_quadrotor_controllers
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/include
 Libs: -L${prefix}/lib -lhector_quadrotor_controllers
 Requires: roscpp

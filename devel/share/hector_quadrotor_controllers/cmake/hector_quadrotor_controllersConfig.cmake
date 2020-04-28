@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(hector_quadrotor_controllers_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/include " STREQUAL " ")
   set(hector_quadrotor_controllers_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/include")
   if(NOT "https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/hector_quadrotor_controller " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/rishabh/quad_ws/devel/lib;/home/rishabh/quad_ws/devel/lib;/home/rishabh/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/rishabh/quad_ws/devel/lib;/home/rishabh/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

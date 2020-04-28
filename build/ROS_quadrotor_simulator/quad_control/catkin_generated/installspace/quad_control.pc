@@ -1,0 +1,8 @@
+prefix=/home/rishabh/quad_ws/install
+
+Name: quad_control
+Description: Description of quad_control
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lquad_controller
+Requires: cmake_modules geometry_msgs glog_catkin mav_msgs roscpp sensor_msgs planning_msgs tf

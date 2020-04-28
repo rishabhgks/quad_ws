@@ -1,0 +1,2 @@
+set(mrpt_msgs_MESSAGE_FILES "msg/GraphConstraint.msg;msg/GraphSlamAgent.msg;msg/GraphSlamAgents.msg;msg/GraphSlamStats.msg;msg/NetworkOfPoses.msg;msg/NodeIDWithLaserScan.msg;msg/NodeIDWithPose_vec.msg;msg/NodeIDWithPose.msg;msg/ObservationRangeBeacon.msg;msg/ObservationRangeBearing.msg;msg/SingleRangeBeaconObservation.msg;msg/SingleRangeBearingObservation.msg")
+set(mrpt_msgs_SERVICE_FILES "srv/GetCMGraph.srv")

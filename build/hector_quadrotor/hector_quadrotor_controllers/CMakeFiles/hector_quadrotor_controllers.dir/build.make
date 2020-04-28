@@ -129,11 +129,136 @@ hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_contro
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o
 
 
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/flags.make
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o: /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pose_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o -c /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pose_controller.cpp
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.i"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pose_controller.cpp > CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.i
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.s"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pose_controller.cpp -o CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.s
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.requires:
+
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.requires
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.provides: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.requires
+	$(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.provides.build
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.provides
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o
+
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/flags.make
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o: /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/twist_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o -c /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/twist_controller.cpp
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.i"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/twist_controller.cpp > CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.i
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.s"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/twist_controller.cpp -o CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.s
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.requires:
+
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.requires
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.provides: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.requires
+	$(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.provides.build
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.provides
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o
+
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/flags.make
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o: /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/motor_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o -c /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/motor_controller.cpp
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.i"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/motor_controller.cpp > CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.i
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.s"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/motor_controller.cpp -o CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.s
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.requires:
+
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.requires
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.provides: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.requires
+	$(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.provides.build
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.provides
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o
+
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/flags.make
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o: /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o -c /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pid.cpp
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.i"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pid.cpp > CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.i
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.s"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pid.cpp -o CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.s
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.requires:
+
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.requires
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.provides: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.requires
+	$(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.provides.build
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.provides
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o
+
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/flags.make
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o: /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/quadrotor_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o -c /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/quadrotor_interface.cpp
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.i"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/quadrotor_interface.cpp > CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.i
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.s"
+	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/quadrotor_interface.cpp -o CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.s
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.requires:
+
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.requires
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.provides: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.requires
+	$(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.provides.build
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.provides
+
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.provides.build: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o
+
+
 # Object files for target hector_quadrotor_controllers
 hector_quadrotor_controllers_OBJECTS = \
 "CMakeFiles/hector_quadrotor_controllers.dir/src/attitude_controller.cpp.o" \
 "CMakeFiles/hector_quadrotor_controllers.dir/src/velocity_controller.cpp.o" \
-"CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o"
+"CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o" \
+"CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o" \
+"CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o" \
+"CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o" \
+"CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o" \
+"CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o"
 
 # External object files for target hector_quadrotor_controllers
 hector_quadrotor_controllers_EXTERNAL_OBJECTS =
@@ -141,6 +266,11 @@ hector_quadrotor_controllers_EXTERNAL_OBJECTS =
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/attitude_controller.cpp.o
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/velocity_controller.cpp.o
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o
+/home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o
+/home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o
+/home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o
+/home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o
+/home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: /opt/ros/kinetic/lib/libcontrol_toolbox.so
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
@@ -208,7 +338,7 @@ hector_quadrotor_controllers_EXTERNAL_OBJECTS =
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rishabh/quad_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library /home/rishabh/quad_ws/devel/lib/libhector_quadrotor_controllers.so"
 	cd /home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hector_quadrotor_controllers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -219,6 +349,11 @@ hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_contro
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/attitude_controller.cpp.o.requires
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/velocity_controller.cpp.o.requires
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o.requires
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o.requires
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o.requires
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o.requires
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o.requires
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o.requires
 
 .PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/requires
 

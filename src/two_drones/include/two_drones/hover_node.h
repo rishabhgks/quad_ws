@@ -73,6 +73,10 @@ public:
 
 void step(Drone_Mission &drone);
 
+void drone1_go_to_position(float x, float y, float z, Pose &pose1_);
+
+void drone2_go_to_position(float x, float y, float z, Pose &pose2_);
+
 void drone1_maintain_altitude(float height1, Pose &pose1_);
 
 void drone2_maintain_altitude(float height2, Pose &pose2_);

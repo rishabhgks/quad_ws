@@ -305,6 +305,8 @@ cmath
 -
 two_drones/hover_node.h
 /home/rishabh/quad_ws/src/two_drones/src/two_drones/hover_node.h
+geometry_msgs/Vector3.h
+-
 
 /opt/ros/kinetic/include/actionlib/action_definition.h
 

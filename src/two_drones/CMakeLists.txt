@@ -163,6 +163,13 @@ target_link_libraries(takeoff_node
 )
 add_dependencies(takeoff_node ${catkin_EXPORTED_TARGETS})
 
+add_executable(obstacle_avoidance src/obstacle_avoidance.cpp)
+
+target_link_libraries(obstacle_avoidance
+  ${catkin_LIBRARIES}
+)
+add_dependencies(obstacle_avoidance ${catkin_EXPORTED_TARGETS})
+
 
 #############
 ## Install ##

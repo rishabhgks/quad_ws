@@ -1,0 +1,2 @@
+set(planning_msgs_MESSAGE_FILES "/home/rishabh/quad_ws/src/mav_comm/planning_msgs/msg/OctomapScan.msg;/home/rishabh/quad_ws/src/mav_comm/planning_msgs/msg/PlanningResponse.msg;/home/rishabh/quad_ws/src/mav_comm/planning_msgs/msg/WayPointArray.msg;/home/rishabh/quad_ws/src/mav_comm/planning_msgs/msg/WayPoint.msg;/home/rishabh/quad_ws/src/mav_comm/planning_msgs/msg/WaypointType.msg")
+set(planning_msgs_SERVICE_FILES "/home/rishabh/quad_ws/src/mav_comm/planning_msgs/srv/PlannerService.srv;/home/rishabh/quad_ws/src/mav_comm/planning_msgs/srv/Octomap.srv")

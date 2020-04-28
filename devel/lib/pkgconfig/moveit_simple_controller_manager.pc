@@ -1,0 +1,8 @@
+prefix=/home/rishabh/quad_ws/devel
+
+Name: moveit_simple_controller_manager
+Description: Description of moveit_simple_controller_manager
+Version: 0.5.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: moveit_core

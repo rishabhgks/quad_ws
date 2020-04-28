@@ -5,7 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/attitude_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/attitude_controller.cpp.o"
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/motor_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o"
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pid.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o"
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/pose_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/position_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.o"
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/quadrotor_interface.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o"
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/twist_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/src/velocity_controller.cpp" "/home/rishabh/quad_ws/build/hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/velocity_controller.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -19,6 +24,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/include"
   "/home/rishabh/quad_ws/devel/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_interface/include"
   "/home/rishabh/quad_ws/src/hector_quadrotor/hector_uav_msgs/include"

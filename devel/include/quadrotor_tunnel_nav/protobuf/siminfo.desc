@@ -1,0 +1,17 @@
+
+ý
+siminfo.proto
+adhoc.msgs"ß
+SimInfo
+state (	
+
+robot_name (	
+
+delay_time (
+sent_message_count (
+recv_message_count (
+
+total_hops (
+total_round_trip_time (
+total_dist_comm (
+total_dist_motion	 (

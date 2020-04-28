@@ -580,3 +580,94 @@ Linking C executable cmTC_0c678
 make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
 
 
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3b00f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b00f.dir/build.make CMakeFiles/cmTC_3b00f.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3b00f.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_3b00f.dir/CheckSymbolExists.cxx.o -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_3b00f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b00f.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_3b00f.dir/CheckSymbolExists.cxx.o  -o cmTC_3b00f -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+File /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_48bc6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_48bc6.dir/build.make CMakeFiles/cmTC_48bc6.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48bc6.dir/src.c.o
+/usr/bin/cc    -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_48bc6.dir/src.c.o   -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_48bc6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48bc6.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_48bc6.dir/src.c.o  -o cmTC_48bc6 -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ea881/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ea881.dir/build.make CMakeFiles/cmTC_ea881.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ea881.dir/src.cxx.o
+/usr/bin/c++     -std=c++11 -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_ea881.dir/src.cxx.o -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_ea881
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea881.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_ea881.dir/src.cxx.o  -o cmTC_ea881 -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_STD_CXX11 succeeded with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8c9df/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c9df.dir/build.make CMakeFiles/cmTC_8c9df.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8c9df.dir/src.cxx.o
+/usr/bin/c++     -DCOMPILER_SUPPORTS_STD_CXX11   -std=c++11 -o CMakeFiles/cmTC_8c9df.dir/src.cxx.o -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_8c9df
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c9df.dir/link.txt --verbose=1
+/usr/bin/c++    -DCOMPILER_SUPPORTS_STD_CXX11    CMakeFiles/cmTC_8c9df.dir/src.cxx.o  -o cmTC_8c9df -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
