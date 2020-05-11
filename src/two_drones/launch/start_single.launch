@@ -35,7 +35,20 @@
             <arg name="odom_topic" default="ground_truth/state" />
             <arg name="laser_topic" default="/drone1/scan" />
         </include>
-
+        <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry" output="screen">
+            <param name="frame_id" value="base_footprint"/>
+            <param name="child_frame_id" value="utm"/>
+        </node>
+        <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
+            <param name="use_mag" value="true"/>
+            <param name="world_frame" value="enu"/>
+            <param name="use_magnetic_field_msg" value="false"/>
+            <param name="fixed_frame" value="/drone1/imu"/>
+            <param name="publish_tf" value="true"/>
+            <remap from="/drone1/imu/data_raw" to="/drone1/raw_imu"/>
+            <remap from="/drone1/imu/mag" to="/drone1/magnetic"/>
+            <remap from="/drone1/imu/data" to="/drone1/raw_imu/data"/>
+        </node>
         <node pkg="two_drones" type="takeoff_node" name="take_off_drone1" output="screen"/>
     </group>
 

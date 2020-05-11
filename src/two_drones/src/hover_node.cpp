@@ -10,6 +10,7 @@
 #include <cmath>
 #include "two_drones/hover_node.h"
 #include <geometry_msgs/Vector3.h>
+#include <tf/transform_datatypes.h>
 
 Drone_Mission drone1("drone1");
 Drone_Mission drone2("drone2");
@@ -38,19 +39,27 @@ int main(int argc, char **argv)
 drone1.fix = n.subscribe("drone1/fix", 10, &drone1_gps_callback);
 drone2.fix = n.subscribe("drone2/fix", 10, &drone2_gps_callback);
 
-drone1.magnetic = n.subscribe("drone1/magnetic", 10, &drone1_magnetic_callback);
-drone2.magnetic = n.subscribe("drone2/magnetic", 10, &drone2_magnetic_callback);
+drone1.magnetic = n.subscribe("drone1/magnetic", 10, &Drone_Mission::magnetic_callback, &drone1);
+drone2.magnetic = n.subscribe("drone2/magnetic", 10, &Drone_Mission::magnetic_callback, &drone2);
+
+drone1.imu = n.subscribe("drone1/raw_imu", 10, &Drone_Mission::imuCallback, &drone1);
+drone2.imu = n.subscribe("drone2/raw_imu", 10, &Drone_Mission::imuCallback, &drone2);
+
+drone1.odom = n.subscribe("drone1/geonav_odom", 10, &Drone_Mission::odomCallback, &drone1);
+drone2.odom = n.subscribe("drone2/geonav_odom", 10, &Drone_Mission::odomCallback, &drone2);
 
 drone1.motor_on = n.serviceClient<hector_uav_msgs::EnableMotors>("drone1/enable_motors");
 drone2.motor_on = n.serviceClient<hector_uav_msgs::EnableMotors>("drone2/enable_motors");
 
 // %Tag(PUBLISHER)%
-  // ros::Publisher chatter_pub = n.advertise<sensor_msgs::Joy>("drone2/joy", 1);
 drone1.move_drone = n.advertise<geometry_msgs::Twist>("drone1/cmd_vel", 1);
 drone2.move_drone = n.advertise<geometry_msgs::Twist>("drone2/cmd_vel", 1);
 
 altitude1 = n.advertise<geometry_msgs::Vector3>("drone1/altitude", 1);
 altitude2 = n.advertise<geometry_msgs::Vector3>("drone2/altitude", 1);
+
+drone1.tester = n.advertise<geometry_msgs::Vector3>("drone1/yaw_vector", 1);
+drone2.tester = n.advertise<geometry_msgs::Vector3>("drone2/yaw_vector", 1);
 
 // drone1.map = n.advertise<nav_msgs::OccupancyGrid>("drone1/map", 1);
 // drone2.map = n.advertise<nav_msgs::OccupancyGrid>("drone2/map", 1);
@@ -159,11 +168,13 @@ void step(Drone_Mission &drone) {
   if(drone.state == 4 && drone.finished != true) {
     if(drone.current_gps.altitude - drone.mean_start_gps <= 3.95) {
       drone.motor_msg.linear.z = 0.1;
+      drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.x = drone.direction;
       drone.motor_msg.angular.z = 0.0;
       drone.move_drone.publish(drone.motor_msg);
     } else if(drone.current_gps.altitude - drone.mean_start_gps > 4.05){
       drone.motor_msg.linear.x = 0.0;
+      drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = -0.2;
       drone.motor_msg.angular.z = 0.0;
       drone.move_drone.publish(drone.motor_msg);  
@@ -192,11 +203,13 @@ void step(Drone_Mission &drone) {
   if(drone.state == 6 && drone.finished != true) {
     if(drone.current_gps.altitude - drone.mean_start_gps <= 3.95) {
       drone.motor_msg.linear.x = 0.0;
+      drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = 0.3;
       drone.motor_msg.angular.z = 0.0;
       drone.move_drone.publish(drone.motor_msg);
     } else if(drone.current_gps.altitude - drone.mean_start_gps > 4.05){
       drone.motor_msg.linear.x = 0.0;
+      drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = -0.2;
       drone.motor_msg.angular.z = 0.0;
       drone.move_drone.publish(drone.motor_msg);  
@@ -204,6 +217,49 @@ void step(Drone_Mission &drone) {
     if(ros::Time::now().toSec() > 50) {
       drone.finished = true;
     }
+  }
+  if(drone.state == 7 && drone.finished != true) {
+    if(fabs(drone.yaw - drone.theta) > 1.51 && fabs(drone.yaw - drone.theta) < 1.59) {
+      drone.rotateToHeading = true;
+      if(drone1.rotateToHeading == true && drone2.rotateToHeading == true) {
+        drone.motor_msg.linear.x = 0.0;
+        drone.motor_msg.linear.y = -1*drone.sign*0.5;
+        drone.motor_msg.linear.z = 0.0;
+        drone.motor_msg.angular.z = 0.0;
+      } else {
+        drone.motor_msg.linear.x = 0.0;
+        drone.motor_msg.linear.y = 0.0;
+        drone.motor_msg.linear.z = 0.0;
+        drone.motor_msg.angular.z = 0.0;
+      }
+    } else {
+      // drone.rotateToHeading = false;
+      drone.motor_msg.linear.x = 0.0;
+      drone.motor_msg.linear.y = 0.0;
+      drone.motor_msg.linear.z = 0.0;
+      drone.motor_msg.angular.z = drone.sign*0.2;
+    }
+    drone.move_drone.publish(drone.motor_msg);
+    ROS_INFO("%s: %f %f", drone.name.c_str(), drone.theta - drone.yaw, fabs(drone.theta - drone.yaw));
+    if(ros::Time::now().toSec() > 50) {
+      drone.finished = true;
+    }
+  }
+  if(drone.state == 8 && drone.finished != true) {
+    if(fabs(drone.yaw - drone.theta) > 0.1) {
+      drone.motor_msg.linear.x = 1.0;
+      drone.motor_msg.linear.y = 0.0;
+      drone.motor_msg.linear.z = 0.0;
+      drone.motor_msg.angular.z = 0.0;
+    } else {
+      drone.motor_msg.linear.x = 0.0;
+      drone.motor_msg.linear.y = 0.0;
+      drone.motor_msg.linear.z = 0.0;
+      drone.motor_msg.angular.z = 0.4;
+    }
+    drone.move_drone.publish(drone.motor_msg);
+    if(drone.dist_x < 0.1 && drone.dist_y < 0.1)
+      drone.finished = true;
   }
 }
 
@@ -218,6 +274,32 @@ bool Drone_Mission::enableMotors(bool enable)
   hector_uav_msgs::EnableMotors srv;
   srv.request.enable = enable;
   return Drone_Mission::motor_on.call(srv);
+}
+
+void Drone_Mission::magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg) {
+  current_magnetic = *msg;
+}
+
+void Drone_Mission::imuCallback(const sensor_msgs::ImuConstPtr& msg) {
+  sensor_msgs::Imu imu = *msg;
+  tf::Quaternion q(imu.orientation.x, imu.orientation.y, imu.orientation.z, imu.orientation.w);
+  tf::Matrix3x3 m(q);
+  m.getRPY(roll, pitch, yaw);
+  // ROS_INFO("%s: Roll: %f, Pitch: %f, Yaw: %f", name.c_str(), roll, pitch, yaw);
+}
+
+void Drone_Mission::odomCallback(const nav_msgs::OdometryConstPtr& msg) {
+  subOdom = *msg;
+  tf::Quaternion q(subOdom.pose.pose.orientation.x, subOdom.pose.pose.orientation.y, subOdom.pose.pose.orientation.z, subOdom.pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  m.getRPY(roll, pitch, yaw);
+  dist_x = subOdom.pose.pose.position.x - target.x;
+  dist_y = subOdom.pose.pose.position.y - target.y;
+  theta = atan2(dist_y, dist_x);
+  test.x = yaw;
+  test.y = theta;
+  test.z = fabs(yaw - theta);
+  tester.publish(test);
 }
 
 void drone1_maintain_altitude(float height1, Pose &pose1_) {
@@ -343,6 +425,8 @@ void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
         step(drone1);
       } else {
         drone1.state = 5;
+        drone1.target.x = 208606.95203;
+        drone1.target.y = 960448.184245;
         drone1.direction = 0.3;
         drone1.finished = false;
         ROS_INFO("Done Hovering");
@@ -380,7 +464,9 @@ void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
       if(drone1.finished == false) {
         step(drone1);
       } else {
-        drone1.state = 6;
+        drone1.state = 7;
+        drone1.target.x = 208606.95203;
+        drone1.target.y = 960448.184245;
         drone1.finished = false;
         ROS_INFO("Done Reaching");
       }
@@ -389,9 +475,29 @@ void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
       if(drone1.finished == false) {
         step(drone1);
       } else {
-        drone1.state = 3;
-        drone1.finished = false;
+        drone1.state = 4;
+        drone1.finished =false;
         ROS_INFO("Done Hovering");
+      }
+      break;
+    case 7:
+      if(drone1.finished == false) {
+        drone1.sign = 1;
+        step(drone1);
+      } else {
+        drone1.state = 6;
+        drone1.finished = false;
+        ROS_INFO("Done Turning to yaw");
+      }
+      break;
+    case 8:
+      if(drone1.finished == false) {
+        drone1.sign = 1;
+        step(drone1);
+      } else {
+        drone1.state = 7;
+        drone1.finished = false;
+        ROS_INFO("Done reaching with gps");
       }
       break;
     default:
@@ -428,6 +534,8 @@ void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
         step(drone2);
       } else {
         drone2.state = 5;
+        drone2.target.x = 208606.254689;
+        drone2.target.y = 960439.370284;
         drone2.direction = -0.3;
         drone2.finished = false;
         ROS_INFO("Done Hovering");
@@ -465,7 +573,9 @@ void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
       if(drone2.finished == false) {
         step(drone2);
       } else {
-        drone2.state = 6;
+        drone2.state = 7;
+        drone2.target.x = 208606.254689;
+        drone2.target.y = 960439.370284;
         drone2.finished = false;
         ROS_INFO("Done Reaching");
       }
@@ -474,31 +584,35 @@ void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
       if(drone2.finished == false) {
         step(drone2);
       } else {
-        drone2.state = 3;
+        drone2.state = 4;
         drone2.finished = false;
         ROS_INFO("Done Hovering");
+      }
+      break;
+    case 7:
+      if(drone2.finished == false) {
+        drone2.sign = -1;
+        step(drone2);
+      } else {
+        drone2.state = 6;
+        drone2.finished = false;
+        ROS_INFO("Done turning to yaw State: %d", drone2.state);
+      }
+      break;
+    case 8:
+      if(drone2.finished == false) {
+        drone2.sign = -1;
+        step(drone2);
+      } else {
+        drone2.state = 7;
+        drone2.finished = false;
+        ROS_INFO("Done reaching with gps");
       }
       break;
     default:
       ROS_INFO("Invalid State");
       break;
   }
-}
-
-void drone1_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg) {
-  drone1.current_magnetic = *msg;
-}
-
-void drone2_magnetic_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg) {
-  drone2.current_magnetic = *msg;
-}
-
-void drone1_map_callback(const nav_msgs::OccupancyGrid::ConstPtr& msg){
-  drone1.map_data = *msg;
-}
-
-void drone2_map_callback(const nav_msgs::OccupancyGrid::ConstPtr& msg){
-  drone2.map_data = *msg;
 }
 
 void doneCb(const actionlib::SimpleClientGoalState& state,

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rishabh/quad_ws/src/blam/geometry_utils/include/geometry_utils/GeometryUtilsMath.h
+cmath
+-
+
+/home/rishabh/quad_ws/src/blam/geometry_utils/tests/test_math.cc
+boost/test/unit_test.hpp
+-
+geometry_utils/GeometryUtilsMath.h
+-
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/blam_example" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/blam_slam" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/geometry_utils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/laser_loop_closure" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/measurement_synchronizer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/parameter_utils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/point_cloud_filter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/point_cloud_localization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/point_cloud_mapper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/point_cloud_odometry" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/point_cloud_visualizer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/blam/pose_graph_msgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/geographic_info" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gps_umd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/hector_gazebo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/hector_localization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/hector_models" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/hector_quadrotor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/hector_slam" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/loam_continuous" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/loam_continuous_catkin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/rrt_exploration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/turtlebot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/turtlebot_apps" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,8 @@
+prefix=/home/rishabh/quad_ws/install
+
+Name: blam_example
+Description: Description of blam_example
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -671,3 +671,33 @@ make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
 
 Source file was:
 int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_383b3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_383b3.dir/build.make CMakeFiles/cmTC_383b3.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_383b3.dir/src.cxx.o
+/usr/bin/c++     -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTC_383b3.dir/src.cxx.o -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_383b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_383b3.dir/link.txt --verbose=1
+/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX11    CMakeFiles/cmTC_383b3.dir/src.cxx.o  -o cmTC_383b3 -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X succeeded with the following output:
+Change Dir: /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6c5c3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6c5c3.dir/build.make CMakeFiles/cmTC_6c5c3.dir/build
+make[1]: Entering directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6c5c3.dir/src.cxx.o
+/usr/bin/c++     -DCOMPILER_SUPPORTS_CXX0X   -std=c++0x -o CMakeFiles/cmTC_6c5c3.dir/src.cxx.o -c /home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_6c5c3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c5c3.dir/link.txt --verbose=1
+/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX0X    CMakeFiles/cmTC_6c5c3.dir/src.cxx.o  -o cmTC_6c5c3 -rdynamic 
+make[1]: Leaving directory '/home/rishabh/quad_ws/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

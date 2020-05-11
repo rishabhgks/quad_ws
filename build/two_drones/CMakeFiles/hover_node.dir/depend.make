@@ -44,16 +44,17 @@ two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/incl
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PointStamped.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/QuaternionStamped.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Transform.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Twist.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TwistStamped.h
+two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TwistWithCovariance.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3Stamped.h
-two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/nav_msgs/MapMetaData.h
-two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/nav_msgs/OccupancyGrid.h
+two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/nav_msgs/Odometry.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -112,6 +113,7 @@ two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/incl
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Imu.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Joy.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
 two_drones/CMakeFiles/hover_node.dir/src/hover_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h

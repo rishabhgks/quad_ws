@@ -7,6 +7,13 @@
 #include <cmath>
 #include "two_drones/hover_node.h"
 #include <hector_uav_msgs/PoseAction.h>
+#include <nav_msgs/Odometry.h>
+#include <tf/transform_datatypes.h>
+
+// double roll, pitch, yaw;
+// double dist_x, dist_y, dist_theta;
+// ros::Publisher vel;
+// ros::Subscriber subOdom;
 
 std::string POSE_NAME = "action/pose";
 // Called once when the goal completes
@@ -29,6 +36,16 @@ void feedbackCb(const hector_uav_msgs::PoseFeedbackConstPtr& feedback)
 {
   ROS_INFO("Got Feedback of action %f %f %f", feedback->current_pose.pose.position.x, feedback->current_pose.pose.position.y, feedback->current_pose.pose.position.z);
 }
+
+// void odom_callback(const nav_msgs::OdometryConstPtr& msg) {
+//   nav_msgs::Odometry odom = *msg;
+  // tf::Quaternion q(odom.pose.pose.orientation.x, odom.pose.pose.orientation.y, odom.pose.pose.orientation.z, odom.pose.pose.orientation.w);
+  // tf::Matrix3x3 m(q);
+  // m.getRPY(roll, pitch, yaw);
+  // dist_x = odom.pose.pose.position.x - 208599.559107;
+  // dist_y = odom.pose.pose.position.y - 960441.484417;
+  // dist_theta = atan2(dist_y, dist_x);
+// }
 
 int main(int argc, char **argv)
 {
@@ -76,7 +93,8 @@ int main(int argc, char **argv)
     // true causes the client to spin its own thread
     // actionlib::SimpleActionClient<hector_uav_msgs::TakeoffAction> takeoff_drone1_("action/takeoff", true);
     actionlib::SimpleActionClient<hector_uav_msgs::PoseAction> pose_("/" + ns + POSE_NAME, true);
-
+    // subOdom = n.subscribe<nav_msgs::Odometry>("geonav_odom", 10, &odom_callback);
+    // vel = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
     hector_uav_msgs::PoseActionFeedback pose_feedback;
     ROS_INFO("Waiting for action server to start.");
     // wait for the action server to start
@@ -96,10 +114,19 @@ int main(int argc, char **argv)
 
     if (pose_.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
     {
-        actionlib::SimpleClientGoalState state = pose_.getState();
-        ROS_INFO("Action finished: %s",state.toString().c_str());
+      actionlib::SimpleClientGoalState state = pose_.getState();
+      ROS_INFO("Action finished: %s",state.toString().c_str());
+      
     }
     else
         ROS_INFO("Action did not finish before the time out."); 
+
+    // geometry_msgs::Twist speed;
+    // if(abs(dist_theta - yaw) > 0.1) {
+    //   speed.linear.x = 0.0;
+    //   speed.angular.z = 0.3;
+    //   vel.publish(speed);
+    // }
+  
     return 0;
 }
