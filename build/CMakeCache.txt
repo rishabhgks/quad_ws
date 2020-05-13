@@ -343,6 +343,15 @@ FreeImage_INCLUDE_DIRS:PATH=/usr/include
 //Path to a library.
 FreeImage_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreeimage.so
 
+//Path to a program.
+GDAL_CONFIG:FILEPATH=/usr/bin/gdal-config
+
+//Path to a file.
+GDAL_INCLUDE_DIR:PATH=/usr/include/gdal
+
+//Path to a library.
+GDAL_LIBRARY:FILEPATH=/usr/lib/libgdal.so
+
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
 
@@ -1537,6 +1546,9 @@ SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 SITE:STRING=rishabh-XPS-15-7590
 
 //Path to a library.
+SWIFTNAV:FILEPATH=SWIFTNAV-NOTFOUND
+
+//Path to a library.
 SWSCALE_LIBRARY_swscale-ffmpeg:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale-ffmpeg.so
 
 //The directory containing a CMake configuration file for Simbody.
@@ -1731,6 +1743,15 @@ ekf_LIB_DEPENDS:STATIC=general;filter_base;general;/opt/ros/kinetic/lib/libeigen
 //Dependencies for the target
 ekf_localization_nodelet_LIB_DEPENDS:STATIC=general;ros_filter;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
+//Value Computed by CMake
+enu_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/enu
+
+//Dependencies for the target
+enu_LIB_DEPENDS:STATIC=general;libswiftnav;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Value Computed by CMake
+enu_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/enu
+
 //Dependencies for the target
 filter_base_LIB_DEPENDS:STATIC=general;filter_utilities;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
@@ -1801,6 +1822,12 @@ geodesy_DIR:PATH=/home/rishabh/quad_ws/devel/share/geodesy/cmake
 geodesy_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/geographic_info/geodesy
 
 //Value Computed by CMake
+geodetic_utils_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/geodetic_utils/geodetic_utils
+
+//Value Computed by CMake
+geodetic_utils_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/geodetic_utils/geodetic_utils
+
+//Value Computed by CMake
 geographic_info_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/geographic_info/geographic_info
 
 //Value Computed by CMake
@@ -1838,6 +1865,15 @@ geonav_transform_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/liborocos-kdl.s
 
 //Value Computed by CMake
 geonav_transform_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/geonav_transform
+
+//Value Computed by CMake
+geotf_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/geodetic_utils/geotf
+
+//Dependencies for the target
+geotf_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf_conversions.so;general;/opt/ros/kinetic/lib/libkdl_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf_conversions.so;general;/opt/ros/kinetic/lib/libkdl_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;gdal;
+
+//Value Computed by CMake
+geotf_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/geodetic_utils/geotf
 
 //Dependencies for the target
 geotiff_writer_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libQtGui.so;general;/usr/lib/x86_64-linux-gnu/libQtCore.so;
@@ -2433,6 +2469,9 @@ libmavconn_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/radiationUAV/realUAV/ad
 //Value Computed by CMake
 libmavconn_SOURCE_DIR:STATIC=/home/rishabh/quad_ws/src/radiationUAV/realUAV/advanced/ROS-workspace/src/mavros/libmavconn
 
+//The directory containing a CMake configuration file for libswiftnav.
+libswiftnav_DIR:PATH=libswiftnav_DIR-NOTFOUND
+
 //Value Computed by CMake
 loam_continuous_catkin_BINARY_DIR:STATIC=/home/rishabh/quad_ws/build/loam_continuous_catkin
 
@@ -2864,6 +2903,12 @@ steer_lib_LIB_DEPENDS:STATIC=general;/home/rishabh/catkin_ws/devel/lib/libgazebo
 
 //The directory containing a CMake configuration file for stereo_msgs.
 stereo_msgs_DIR:PATH=/opt/ros/kinetic/share/stereo_msgs/cmake
+
+//Path to a library.
+swiftnav:FILEPATH=swiftnav-NOTFOUND
+
+//Path to a library.
+swiftnav_LIBRARY:FILEPATH=swiftnav_LIBRARY-NOTFOUND
 
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/kinetic/share/tf2/cmake
@@ -3334,7 +3379,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=77
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=79
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -3411,6 +3456,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen3:INTERNAL=[/usr/include/eigen3][TRUE][v(2.91.0)]
 //Details about finding Flann
 FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a][/usr/include][v()]
+//Details about finding GDAL
+FIND_PACKAGE_MESSAGE_DETAILS_GDAL:INTERNAL=[/usr/lib/libgdal.so][/usr/include/gdal][v()]
 //Details about finding GTS
 FIND_PACKAGE_MESSAGE_DETAILS_GTS:INTERNAL=[true][v()]
 //Details about finding JSONCPP

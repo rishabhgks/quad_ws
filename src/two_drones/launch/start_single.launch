@@ -2,13 +2,13 @@
 
 <launch>
     <!-- Start Gazebo with wg world running in (max) realtime -->
-    <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/>
+    <include file="$(find hector_gazebo_worlds)/launch/sick_robot_day_2012_20m.launch"/>
 
     <group ns="drone1">
         <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >
             <arg name="tf_prefix" value="drone1" />
             <arg name="name" value="drone1" />
-            <arg name="y" value="-1.0" />
+            <arg name="y" value="0.0" />
             <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/>
             <arg name="controllers" value="
             controller/attitude
@@ -35,10 +35,10 @@
             <arg name="odom_topic" default="ground_truth/state" />
             <arg name="laser_topic" default="/drone1/scan" />
         </include>
-        <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry" output="screen">
+        <!-- <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry" output="screen">
             <param name="frame_id" value="base_footprint"/>
             <param name="child_frame_id" value="utm"/>
-        </node>
+        </node> -->
         <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="screen">
             <param name="use_mag" value="true"/>
             <param name="world_frame" value="enu"/>
@@ -49,7 +49,22 @@
             <remap from="/drone1/imu/mag" to="/drone1/magnetic"/>
             <remap from="/drone1/imu/data" to="/drone1/raw_imu/data"/>
         </node>
-        <node pkg="two_drones" type="takeoff_node" name="take_off_drone1" output="screen"/>
+        <!-- <param name="gps_ref_latitude" value="49.8603319786"/>
+        <param name="gps_ref_longitude" value="8.687063412"/>
+        <param name="gps_ref_altitude" value="0.0"/> -->
+        <node pkg="geodetic_utils" type="set_gps_reference_node" name="set_gps_reference_node" output="screen"/>
+        <node pkg="geodetic_utils" type="gps_to_pose_conversion_node" name="gps_to_pose_conversion_node" output="screen">
+            <remap from="/raw_imu/data" to="/drone1/raw_imu/data"/>
+            <remap from="/fix" to="/drone1/fix"/>
+        </node>
+        <!-- <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node" clear_params="true" output="screen">
+            <rosparam param="datum">[49.8603319786, 8.687063412, 0.0]</rosparam>
+            <rosparam param="broadcast_odom2base_transform">false</rosparam>
+            <param name="base_link_frame_id" value="drone1/base_link"/>
+            <param name="odom_frame_id" value="drone1/odom"/>
+            <param name="utm_frame_id" value="drone1/utm"/>
+        </node> -->
+        <node pkg="two_drones" type="takeoff_node" name="take_off_drone1" args="10.0 1.0 5.0" output="screen"/>
     </group>
 
     <!-- Start rviz visualization with preset config -->

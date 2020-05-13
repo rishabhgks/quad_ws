@@ -44,12 +44,12 @@
         </node>
         <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node" clear_params="true" output="screen">
             <!-- Datum as latitude, longitude [decimal deg.], yaw [ENU, degrees] -->
-            <!-- <rosparam param="datum">[36.6137, -121.912, 0.0]</rosparam> -->
+            <rosparam param="datum" >[49.8603319786, 8.687063412, 0.0]</rosparam>
             <param name="base_link_frame_id" value="drone1/base_link"/>
             <param name="odom_frame_id" value="drone1/odom"/>
             <param name="utm_frame_id" value="drone1/utm"/>
         </node>
-        <node pkg="two_drones" type="takeoff_node" name="take_off_drone1" output="screen" args="-2.0 -10">
+        <node pkg="two_drones" type="takeoff_node" name="take_off_drone1" output="screen" args="5 -2.0">
             <remap from="cmd_vel" to="drone1/cmd_vel"/>
             <remap from="geonav_odom" to="drone1/geonav_odom"/>
         </node>
@@ -95,12 +95,12 @@
         </node>
         <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node" clear_params="true" output="screen">
             <!-- Datum as latitude, longitude [decimal deg.], yaw [ENU, degrees] -->
-            <!-- <rosparam param="datum">[36.6137, -121.912, 0.0]</rosparam> -->
+            <rosparam param="datum" >[49.8603319786, 8.687063412, 0.0]</rosparam>
             <param name="base_link_frame_id" value="drone2/base_link"/>
             <param name="odom_frame_id" value="drone2/odom"/>
             <param name="utm_frame_id" value="drone2/utm"/>
         </node>
-        <node pkg="two_drones" type="takeoff_node" name="take_off_drone2" output="screen" args="2.0">
+        <node pkg="two_drones" type="takeoff_node" name="take_off_drone2" output="screen" args="5 2.0">
             <remap from="cmd_vel" to="drone2/cmd_vel"/>
             <remap from="geonav_odom" to="drone2/geonav_odom"/>
         </node>

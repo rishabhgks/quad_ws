@@ -3,7 +3,7 @@
 <launch>
     <param name="/use_sim_time" value="true"/>
       <!-- Start Gazebo with wg world running in (max) realtime -->
-    <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/>
+    <include file="$(find hector_gazebo_worlds)/launch/sick_robot_day_2012_20m.launch"/>
 
     <!-- <include file="$(find multirobot_map_merge)/launch/map_merge.launch" /> -->
 
@@ -39,11 +39,13 @@
             <arg name="odom_topic" value="ground_truth/state" />
             <arg name="laser_topic" value="/drone1/scan" />
         </include>
-        <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node" clear_params="true" output="screen">
-            <param name="base_link_frame_id" value="drone1/base_link"/>
-            <param name="odom_frame_id" value="drone1/odom"/>
-            <param name="utm_frame_id" value="drone1/utm"/>
-        </node>
+        <!-- <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node" clear_params="true" output="screen">
+            <rosparam param="datum" >[49.8603319786, 8.687063412, 0.0]</rosparam>
+            <param name="base_link_frame_id" value="base_link"/>
+            <param name="odom_frame_id" value="odom"/>
+            <param name="utm_frame_id" value="utm"/>
+            <param name="orientation_ned" value="true"/>
+        </node> -->
         <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry_drone1" output="screen" >
             <param name="frame_id" value="drone1/map"/>
             <param name="child_frame_id" value="drone1/base_link"/>
@@ -58,6 +60,11 @@
             <remap from="/drone1/imu/mag" to="/drone1/magnetic"/>
             <remap from="/drone1/imu/data" to="/drone1/raw_imu/data"/>
         </node>
+        <!-- <node pkg="geodetic_utils" type="set_gps_reference_node" name="set_gps_reference_node" output="screen"/>
+        <node pkg="geodetic_utils" type="gps_to_pose_conversion_node" name="gps_to_pose_conversion_node" output="screen">
+            <remap from="/raw_imu/data" to="/drone1/raw_imu/data"/>
+            <remap from="/fix" to="/drone1/fix"/>
+        </node> -->
     </group>
 
     <group ns="drone2">
@@ -92,11 +99,13 @@
             <arg name="odom_topic" default="ground_truth/state" />
             <arg name="laser_topic" default="/drone2/scan" />
         </include>
-        <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node2" clear_params="true" output="screen">
-            <param name="base_link_frame_id" value="drone2/base_link"/>
-            <param name="odom_frame_id" value="drone2/odom"/>
-            <param name="utm_frame_id" value="drone2/utm"/>
-        </node>
+        <!-- <node pkg="geonav_transform" type="geonav_transform_node" name="geonav_transform_node2" clear_params="true" output="screen">
+            <rosparam param="datum" >[49.8603319786, 8.687063412, 0.0]</rosparam>
+            <param name="base_link_frame_id" value="base_link"/>
+            <param name="odom_frame_id" value="odom"/>
+            <param name="utm_frame_id" value="utm"/>
+            <param name="orientation_ned" value="true"/>
+        </node> -->
         <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry_drone2" output="screen">
             <param name="frame_id" value="drone2/map"/>
             <param name="child_frame_id" value="drone2/base_link"/>
@@ -111,7 +120,30 @@
             <remap from="/drone2/imu/mag" to="/drone2/magnetic"/>
             <remap from="/drone2/imu/data" to="/drone2/raw_imu/data"/>
         </node>
+        <!-- <node pkg="geodetic_utils" type="set_gps_reference_node" name="set_gps_reference_node2" output="screen"/>
+        <node pkg="geodetic_utils" type="gps_to_pose_conversion_node" name="gps_to_pose_conversion_node2" output="screen">
+            <remap from="/raw_imu/data" to="/drone2/raw_imu/data"/>
+            <remap from="/fix" to="/drone2/fix"/>
+        </node> -->
     </group>
+
+    <!-- <node pkg="geodetic_utils" type="set_gps_reference_node" name="set_gps_reference_node2" output="screen">
+        <remap from="/fix" to="/drone1/fix" />
+    </node>
+    <node pkg="geodetic_utils" type="gps_to_pose_conversion_node" name="gps_to_pose_conversion_node" output="screen">
+        <remap from="/raw_imu/data" to="/drone1/raw_imu/data"/>
+        <remap from="/fix" to="/drone1/fix"/>
+        <remap from="/gps_pose" to="/drone1/gps_pose"/>
+        <remap from="/gps_position" to="/drone1/gps_position"/>
+        <remap from="/gps_transform" to="/drone1/gps_transform"/>
+    </node>
+    <node pkg="geodetic_utils" type="gps_to_pose_conversion_node" name="gps_to_pose_conversion_node2" output="screen">
+        <remap from="/raw_imu/data" to="/drone2/raw_imu/data"/>
+        <remap from="/fix" to="/drone2/fix"/>
+        <remap from="/gps_pose" to="/drone2/gps_pose"/>
+        <remap from="/gps_position" to="/drone2/gps_position"/>
+        <remap from="/gps_transform" to="/drone2/gps_transform"/>
+    </node> -->
     
     <!-- <include file="$(find two_drones)/launch/quadrotor_gmapping.launch" >
         <remap from="map" to="drone1/map" />

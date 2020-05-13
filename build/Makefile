@@ -2779,121 +2779,43 @@ pose_graph_msgs_gencpp/fast:
 .PHONY : pose_graph_msgs_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_ros_sonar
+# Target rules for targets named actionlib_generate_messages_nodejs
 
 # Build rule for target.
-hector_gazebo_ros_sonar: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_sonar
-.PHONY : hector_gazebo_ros_sonar
+actionlib_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-hector_gazebo_ros_sonar/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_sonar.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_sonar.dir/build
-.PHONY : hector_gazebo_ros_sonar/fast
+actionlib_generate_messages_nodejs/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_reset_plugin
+# Target rules for targets named tf_generate_messages_py
 
 # Build rule for target.
-hector_gazebo_reset_plugin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_reset_plugin
-.PHONY : hector_gazebo_reset_plugin
+tf_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
+.PHONY : tf_generate_messages_py
 
 # fast build rule for target.
-hector_gazebo_reset_plugin/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_reset_plugin.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_reset_plugin.dir/build
-.PHONY : hector_gazebo_reset_plugin/fast
+tf_generate_messages_py/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_py.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_py
+# Target rules for targets named actionlib_generate_messages_lisp
 
 # Build rule for target.
-tf2_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
-.PHONY : tf2_msgs_generate_messages_py
+actionlib_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
+.PHONY : actionlib_generate_messages_lisp
 
 # fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_eus
-
-# Build rule for target.
-tf2_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_eus
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_ros_imu
-
-# Build rule for target.
-hector_gazebo_ros_imu: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_imu
-.PHONY : hector_gazebo_ros_imu
-
-# fast build rule for target.
-hector_gazebo_ros_imu/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_imu.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_imu.dir/build
-.PHONY : hector_gazebo_ros_imu/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_nodejs
-
-# Build rule for target.
-tf2_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_nodejs
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_lisp
-
-# Build rule for target.
-tf_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_lisp
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_lisp
-
-# Build rule for target.
-tf2_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_generate_messages_py
-
-# Build rule for target.
-actionlib_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_py
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
+actionlib_generate_messages_lisp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_cpp
@@ -2905,8 +2827,255 @@ tf2_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 tf2_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
 .PHONY : tf2_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_nodejs
+
+# Build rule for target.
+tf_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_nodejs
+.PHONY : tf_generate_messages_nodejs
+
+# fast build rule for target.
+tf_generate_messages_nodejs/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_nodejs.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_nodejs.dir/build
+.PHONY : tf_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named set_gps_reference_node
+
+# Build rule for target.
+set_gps_reference_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 set_gps_reference_node
+.PHONY : set_gps_reference_node
+
+# fast build rule for target.
+set_gps_reference_node/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/set_gps_reference_node.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/set_gps_reference_node.dir/build
+.PHONY : set_gps_reference_node/fast
+
+#=============================================================================
+# Target rules for targets named geodetic_utils_package
+
+# Build rule for target.
+geodetic_utils_package: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geodetic_utils_package
+.PHONY : geodetic_utils_package
+
+# fast build rule for target.
+geodetic_utils_package/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/geodetic_utils_package.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/geodetic_utils_package.dir/build
+.PHONY : geodetic_utils_package/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_lisp
+
+# Build rule for target.
+std_srvs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_cpp
+
+# Build rule for target.
+actionlib_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_cpp
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_eus
+
+# Build rule for target.
+actionlib_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_eus
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_eus.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_cpp
+
+# Build rule for target.
+tf_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_cpp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_py
+
+# Build rule for target.
+actionlib_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_py
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_py.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_lisp
+
+# Build rule for target.
+tf2_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named gps_to_pose_conversion_node
+
+# Build rule for target.
+gps_to_pose_conversion_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gps_to_pose_conversion_node
+.PHONY : gps_to_pose_conversion_node
+
+# fast build rule for target.
+gps_to_pose_conversion_node/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/gps_to_pose_conversion_node.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/gps_to_pose_conversion_node.dir/build
+.PHONY : gps_to_pose_conversion_node/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_lisp
+
+# Build rule for target.
+tf_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_lisp
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_lisp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_nodejs
+
+# Build rule for target.
+tf2_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_nodejs
+.PHONY : tf2_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+tf2_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+.PHONY : tf2_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_eus
+
+# Build rule for target.
+tf2_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_eus
+.PHONY : tf2_msgs_generate_messages_eus
+
+# fast build rule for target.
+tf2_msgs_generate_messages_eus/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+.PHONY : tf2_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_py
+
+# Build rule for target.
+tf2_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_eus
+
+# Build rule for target.
+tf_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_eus
+.PHONY : tf_generate_messages_eus
+
+# fast build rule for target.
+tf_generate_messages_eus/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_eus.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/tf_generate_messages_eus.dir/build
+.PHONY : tf_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_cpp
+
+# Build rule for target.
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_eus
+
+# Build rule for target.
+std_srvs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_nodejs
+
+# Build rule for target.
+std_srvs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_py
+
+# Build rule for target.
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	$(MAKE) -f geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_py.dir/build.make geodetic_utils/geodetic_utils/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named hector_servo_plugin
@@ -2922,199 +3091,56 @@ hector_servo_plugin/fast:
 .PHONY : hector_servo_plugin/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_generate_messages_eus
+# Target rules for targets named hector_gazebo_ros_sonar
 
 # Build rule for target.
-actionlib_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_eus
-.PHONY : actionlib_generate_messages_eus
+hector_gazebo_ros_sonar: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_sonar
+.PHONY : hector_gazebo_ros_sonar
 
 # fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
+hector_gazebo_ros_sonar/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_sonar.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_sonar.dir/build
+.PHONY : hector_gazebo_ros_sonar/fast
 
 #=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_py
+# Target rules for targets named hector_gazebo_ros_gps
 
 # Build rule for target.
-dynamic_reconfigure_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_py
-.PHONY : dynamic_reconfigure_generate_messages_py
+hector_gazebo_ros_gps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_gps
+.PHONY : hector_gazebo_ros_gps
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
+hector_gazebo_ros_gps/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_gps.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_gps.dir/build
+.PHONY : hector_gazebo_ros_gps/fast
 
 #=============================================================================
-# Target rules for targets named diffdrive_plugin_6w
+# Target rules for targets named hector_gazebo_ros_magnetic
 
 # Build rule for target.
-diffdrive_plugin_6w: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diffdrive_plugin_6w
-.PHONY : diffdrive_plugin_6w
+hector_gazebo_ros_magnetic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_magnetic
+.PHONY : hector_gazebo_ros_magnetic
 
 # fast build rule for target.
-diffdrive_plugin_6w/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_6w.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_6w.dir/build
-.PHONY : diffdrive_plugin_6w/fast
+hector_gazebo_ros_magnetic/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_magnetic.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_magnetic.dir/build
+.PHONY : hector_gazebo_ros_magnetic/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_generate_messages_cpp
+# Target rules for targets named hector_gazebo_ros_imu
 
 # Build rule for target.
-actionlib_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_cpp
-.PHONY : actionlib_generate_messages_cpp
+hector_gazebo_ros_imu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_imu
+.PHONY : hector_gazebo_ros_imu
 
 # fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_gencpp
-
-# Build rule for target.
-hector_gazebo_plugins_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gencpp
-.PHONY : hector_gazebo_plugins_gencpp
-
-# fast build rule for target.
-hector_gazebo_plugins_gencpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencpp.dir/build
-.PHONY : hector_gazebo_plugins_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_lisp
-
-# Build rule for target.
-std_srvs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_cpp
-
-# Build rule for target.
-tf_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_eus
-
-# Build rule for target.
-std_srvs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_py
-
-# Build rule for target.
-std_srvs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_cpp
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_cpp
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_genpy
-
-# Build rule for target.
-hector_gazebo_plugins_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_genpy
-.PHONY : hector_gazebo_plugins_genpy
-
-# fast build rule for target.
-hector_gazebo_plugins_genpy/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genpy.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genpy.dir/build
-.PHONY : hector_gazebo_plugins_genpy/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_nodejs
-
-# Build rule for target.
-std_srvs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_cpp
-
-# Build rule for target.
-std_srvs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_eus
-
-# Build rule for target.
-tf_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_eus
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_generate_messages_lisp
-
-# Build rule for target.
-hector_gazebo_plugins_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages_lisp
-.PHONY : hector_gazebo_plugins_generate_messages_lisp
-
-# fast build rule for target.
-hector_gazebo_plugins_generate_messages_lisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_lisp.dir/build
-.PHONY : hector_gazebo_plugins_generate_messages_lisp/fast
+hector_gazebo_ros_imu/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_imu.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_imu.dir/build
+.PHONY : hector_gazebo_ros_imu/fast
 
 #=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_lisp
@@ -3130,121 +3156,43 @@ dynamic_reconfigure_generate_messages_lisp/fast:
 .PHONY : dynamic_reconfigure_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_plugins_generate_messages_eus
+# Target rules for targets named hector_gazebo_plugins_gencpp
 
 # Build rule for target.
-hector_gazebo_plugins_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages_eus
-.PHONY : hector_gazebo_plugins_generate_messages_eus
+hector_gazebo_plugins_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gencpp
+.PHONY : hector_gazebo_plugins_gencpp
 
 # fast build rule for target.
-hector_gazebo_plugins_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_eus.dir/build
-.PHONY : hector_gazebo_plugins_generate_messages_eus/fast
+hector_gazebo_plugins_gencpp/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencpp.dir/build
+.PHONY : hector_gazebo_plugins_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named tf_generate_messages_py
+# Target rules for targets named hector_gazebo_plugins_gennodejs
 
 # Build rule for target.
-tf_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
-.PHONY : tf_generate_messages_py
+hector_gazebo_plugins_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gennodejs
+.PHONY : hector_gazebo_plugins_gennodejs
 
 # fast build rule for target.
-tf_generate_messages_py/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
+hector_gazebo_plugins_gennodejs/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gennodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gennodejs.dir/build
+.PHONY : hector_gazebo_plugins_gennodejs/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_generate_messages_nodejs
+# Target rules for targets named diffdrive_plugin_multi_wheel
 
 # Build rule for target.
-actionlib_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
-.PHONY : actionlib_generate_messages_nodejs
+diffdrive_plugin_multi_wheel: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diffdrive_plugin_multi_wheel
+.PHONY : diffdrive_plugin_multi_wheel
 
 # fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_gencfg
-
-# Build rule for target.
-hector_gazebo_plugins_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gencfg
-.PHONY : hector_gazebo_plugins_gencfg
-
-# fast build rule for target.
-hector_gazebo_plugins_gencfg/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencfg.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencfg.dir/build
-.PHONY : hector_gazebo_plugins_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_nodejs
-
-# Build rule for target.
-tf_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_nodejs
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_generate_messages
-
-# Build rule for target.
-hector_gazebo_plugins_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages
-.PHONY : hector_gazebo_plugins_generate_messages
-
-# fast build rule for target.
-hector_gazebo_plugins_generate_messages/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages.dir/build
-.PHONY : hector_gazebo_plugins_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_eus
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named _hector_gazebo_plugins_generate_messages_check_deps_SetBias
-
-# Build rule for target.
-_hector_gazebo_plugins_generate_messages_check_deps_SetBias: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _hector_gazebo_plugins_generate_messages_check_deps_SetBias
-.PHONY : _hector_gazebo_plugins_generate_messages_check_deps_SetBias
-
-# fast build rule for target.
-_hector_gazebo_plugins_generate_messages_check_deps_SetBias/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/_hector_gazebo_plugins_generate_messages_check_deps_SetBias.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/_hector_gazebo_plugins_generate_messages_check_deps_SetBias.dir/build
-.PHONY : _hector_gazebo_plugins_generate_messages_check_deps_SetBias/fast
+diffdrive_plugin_multi_wheel/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_multi_wheel.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_multi_wheel.dir/build
+.PHONY : diffdrive_plugin_multi_wheel/fast
 
 #=============================================================================
 # Target rules for targets named hector_gazebo_plugins_generate_messages_cpp
@@ -3260,43 +3208,17 @@ hector_gazebo_plugins_generate_messages_cpp/fast:
 .PHONY : hector_gazebo_plugins_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_plugins_geneus
+# Target rules for targets named _hector_gazebo_plugins_generate_messages_check_deps_SetBias
 
 # Build rule for target.
-hector_gazebo_plugins_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_geneus
-.PHONY : hector_gazebo_plugins_geneus
+_hector_gazebo_plugins_generate_messages_check_deps_SetBias: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _hector_gazebo_plugins_generate_messages_check_deps_SetBias
+.PHONY : _hector_gazebo_plugins_generate_messages_check_deps_SetBias
 
 # fast build rule for target.
-hector_gazebo_plugins_geneus/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_geneus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_geneus.dir/build
-.PHONY : hector_gazebo_plugins_geneus/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_generate_messages_lisp
-
-# Build rule for target.
-actionlib_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_plugins_genlisp
-
-# Build rule for target.
-hector_gazebo_plugins_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_genlisp
-.PHONY : hector_gazebo_plugins_genlisp
-
-# fast build rule for target.
-hector_gazebo_plugins_genlisp/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genlisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genlisp.dir/build
-.PHONY : hector_gazebo_plugins_genlisp/fast
+_hector_gazebo_plugins_generate_messages_check_deps_SetBias/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/_hector_gazebo_plugins_generate_messages_check_deps_SetBias.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/_hector_gazebo_plugins_generate_messages_check_deps_SetBias.dir/build
+.PHONY : _hector_gazebo_plugins_generate_messages_check_deps_SetBias/fast
 
 #=============================================================================
 # Target rules for targets named hector_gazebo_plugins_generate_messages_nodejs
@@ -3312,17 +3234,147 @@ hector_gazebo_plugins_generate_messages_nodejs/fast:
 .PHONY : hector_gazebo_plugins_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named diffdrive_plugin_multi_wheel
+# Target rules for targets named hector_gazebo_plugins_generate_messages
 
 # Build rule for target.
-diffdrive_plugin_multi_wheel: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diffdrive_plugin_multi_wheel
-.PHONY : diffdrive_plugin_multi_wheel
+hector_gazebo_plugins_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages
+.PHONY : hector_gazebo_plugins_generate_messages
 
 # fast build rule for target.
-diffdrive_plugin_multi_wheel/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_multi_wheel.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_multi_wheel.dir/build
-.PHONY : diffdrive_plugin_multi_wheel/fast
+hector_gazebo_plugins_generate_messages/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages.dir/build
+.PHONY : hector_gazebo_plugins_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_gencfg
+
+# Build rule for target.
+dynamic_reconfigure_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
+.PHONY : dynamic_reconfigure_gencfg
+
+# fast build rule for target.
+dynamic_reconfigure_gencfg/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named hector_gazebo_plugins_generate_messages_lisp
+
+# Build rule for target.
+hector_gazebo_plugins_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages_lisp
+.PHONY : hector_gazebo_plugins_generate_messages_lisp
+
+# fast build rule for target.
+hector_gazebo_plugins_generate_messages_lisp/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_lisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_lisp.dir/build
+.PHONY : hector_gazebo_plugins_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named diffdrive_plugin_6w
+
+# Build rule for target.
+diffdrive_plugin_6w: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diffdrive_plugin_6w
+.PHONY : diffdrive_plugin_6w
+
+# fast build rule for target.
+diffdrive_plugin_6w/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_6w.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/diffdrive_plugin_6w.dir/build
+.PHONY : diffdrive_plugin_6w/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_py
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_py
+.PHONY : dynamic_reconfigure_generate_messages_py
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_py/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named hector_gazebo_reset_plugin
+
+# Build rule for target.
+hector_gazebo_reset_plugin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_reset_plugin
+.PHONY : hector_gazebo_reset_plugin
+
+# fast build rule for target.
+hector_gazebo_reset_plugin/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_reset_plugin.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_reset_plugin.dir/build
+.PHONY : hector_gazebo_reset_plugin/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_eus
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named hector_gazebo_plugins_generate_messages_eus
+
+# Build rule for target.
+hector_gazebo_plugins_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_generate_messages_eus
+.PHONY : hector_gazebo_plugins_generate_messages_eus
+
+# fast build rule for target.
+hector_gazebo_plugins_generate_messages_eus/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_eus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_generate_messages_eus.dir/build
+.PHONY : hector_gazebo_plugins_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named hector_gazebo_plugins_geneus
+
+# Build rule for target.
+hector_gazebo_plugins_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_geneus
+.PHONY : hector_gazebo_plugins_geneus
+
+# fast build rule for target.
+hector_gazebo_plugins_geneus/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_geneus.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_geneus.dir/build
+.PHONY : hector_gazebo_plugins_geneus/fast
+
+#=============================================================================
+# Target rules for targets named hector_gazebo_plugins_genlisp
+
+# Build rule for target.
+hector_gazebo_plugins_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_genlisp
+.PHONY : hector_gazebo_plugins_genlisp
+
+# fast build rule for target.
+hector_gazebo_plugins_genlisp/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genlisp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genlisp.dir/build
+.PHONY : hector_gazebo_plugins_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named hector_gazebo_plugins_generate_messages_py
@@ -3351,56 +3403,43 @@ gazebo_ros_force_based_move/fast:
 .PHONY : gazebo_ros_force_based_move/fast
 
 #=============================================================================
-# Target rules for targets named dynamic_reconfigure_gencfg
+# Target rules for targets named dynamic_reconfigure_generate_messages_cpp
 
 # Build rule for target.
-dynamic_reconfigure_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
-.PHONY : dynamic_reconfigure_gencfg
+dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_cpp
+.PHONY : dynamic_reconfigure_generate_messages_cpp
 
 # fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
+dynamic_reconfigure_generate_messages_cpp/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_plugins_gennodejs
+# Target rules for targets named hector_gazebo_plugins_genpy
 
 # Build rule for target.
-hector_gazebo_plugins_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gennodejs
-.PHONY : hector_gazebo_plugins_gennodejs
+hector_gazebo_plugins_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_genpy
+.PHONY : hector_gazebo_plugins_genpy
 
 # fast build rule for target.
-hector_gazebo_plugins_gennodejs/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gennodejs.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gennodejs.dir/build
-.PHONY : hector_gazebo_plugins_gennodejs/fast
+hector_gazebo_plugins_genpy/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genpy.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_genpy.dir/build
+.PHONY : hector_gazebo_plugins_genpy/fast
 
 #=============================================================================
-# Target rules for targets named hector_gazebo_ros_magnetic
+# Target rules for targets named hector_gazebo_plugins_gencfg
 
 # Build rule for target.
-hector_gazebo_ros_magnetic: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_magnetic
-.PHONY : hector_gazebo_ros_magnetic
+hector_gazebo_plugins_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_plugins_gencfg
+.PHONY : hector_gazebo_plugins_gencfg
 
 # fast build rule for target.
-hector_gazebo_ros_magnetic/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_magnetic.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_magnetic.dir/build
-.PHONY : hector_gazebo_ros_magnetic/fast
-
-#=============================================================================
-# Target rules for targets named hector_gazebo_ros_gps
-
-# Build rule for target.
-hector_gazebo_ros_gps: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hector_gazebo_ros_gps
-.PHONY : hector_gazebo_ros_gps
-
-# fast build rule for target.
-hector_gazebo_ros_gps/fast:
-	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_gps.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_gps.dir/build
-.PHONY : hector_gazebo_ros_gps/fast
+hector_gazebo_plugins_gencfg/fast:
+	$(MAKE) -f hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencfg.dir/build.make hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_plugins_gencfg.dir/build
+.PHONY : hector_gazebo_plugins_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named imu_attitude_to_tf_node
@@ -5990,6 +6029,45 @@ geonav_transform_node/fast:
 .PHONY : geonav_transform_node/fast
 
 #=============================================================================
+# Target rules for targets named geotf
+
+# Build rule for target.
+geotf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geotf
+.PHONY : geotf
+
+# fast build rule for target.
+geotf/fast:
+	$(MAKE) -f geodetic_utils/geotf/CMakeFiles/geotf.dir/build.make geodetic_utils/geotf/CMakeFiles/geotf.dir/build
+.PHONY : geotf/fast
+
+#=============================================================================
+# Target rules for targets named geotf_package
+
+# Build rule for target.
+geotf_package: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geotf_package
+.PHONY : geotf_package
+
+# fast build rule for target.
+geotf_package/fast:
+	$(MAKE) -f geodetic_utils/geotf/CMakeFiles/geotf_package.dir/build.make geodetic_utils/geotf/CMakeFiles/geotf_package.dir/build
+.PHONY : geotf_package/fast
+
+#=============================================================================
+# Target rules for targets named demo_node
+
+# Build rule for target.
+demo_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 demo_node
+.PHONY : demo_node
+
+# fast build rule for target.
+demo_node/fast:
+	$(MAKE) -f geodetic_utils/geotf/CMakeFiles/demo_node.dir/build.make geodetic_utils/geotf/CMakeFiles/demo_node.dir/build
+.PHONY : demo_node/fast
+
+#=============================================================================
 # Target rules for targets named hector_mapping_generate_messages_py
 
 # Build rule for target.
@@ -7399,54 +7477,57 @@ help:
 	@echo "... pose_graph_msgs_geneus"
 	@echo "... _pose_graph_msgs_generate_messages_check_deps_PoseGraphEdge"
 	@echo "... pose_graph_msgs_gencpp"
-	@echo "... hector_gazebo_ros_sonar"
-	@echo "... hector_gazebo_reset_plugin"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... hector_gazebo_ros_imu"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... hector_servo_plugin"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... diffdrive_plugin_6w"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... hector_gazebo_plugins_gencpp"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... hector_gazebo_plugins_genpy"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... tf_generate_messages_eus"
-	@echo "... hector_gazebo_plugins_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... hector_gazebo_plugins_generate_messages_eus"
-	@echo "... tf_generate_messages_py"
 	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... hector_gazebo_plugins_gencfg"
-	@echo "... tf_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... hector_gazebo_plugins_generate_messages"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
-	@echo "... _hector_gazebo_plugins_generate_messages_check_deps_SetBias"
-	@echo "... hector_gazebo_plugins_generate_messages_cpp"
-	@echo "... hector_gazebo_plugins_geneus"
+	@echo "... tf_generate_messages_py"
 	@echo "... actionlib_generate_messages_lisp"
-	@echo "... hector_gazebo_plugins_genlisp"
-	@echo "... hector_gazebo_plugins_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... tf_generate_messages_nodejs"
+	@echo "... set_gps_reference_node"
+	@echo "... geodetic_utils_package"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... gps_to_pose_conversion_node"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_eus"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... hector_servo_plugin"
+	@echo "... hector_gazebo_ros_sonar"
+	@echo "... hector_gazebo_ros_gps"
+	@echo "... hector_gazebo_ros_magnetic"
+	@echo "... hector_gazebo_ros_imu"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... hector_gazebo_plugins_gencpp"
+	@echo "... hector_gazebo_plugins_gennodejs"
 	@echo "... diffdrive_plugin_multi_wheel"
+	@echo "... hector_gazebo_plugins_generate_messages_cpp"
+	@echo "... _hector_gazebo_plugins_generate_messages_check_deps_SetBias"
+	@echo "... hector_gazebo_plugins_generate_messages_nodejs"
+	@echo "... hector_gazebo_plugins_generate_messages"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... hector_gazebo_plugins_generate_messages_lisp"
+	@echo "... diffdrive_plugin_6w"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... hector_gazebo_reset_plugin"
+	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... hector_gazebo_plugins_generate_messages_eus"
+	@echo "... hector_gazebo_plugins_geneus"
+	@echo "... hector_gazebo_plugins_genlisp"
 	@echo "... hector_gazebo_plugins_generate_messages_py"
 	@echo "... gazebo_ros_force_based_move"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... hector_gazebo_plugins_gennodejs"
-	@echo "... hector_gazebo_ros_magnetic"
-	@echo "... hector_gazebo_ros_gps"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... hector_gazebo_plugins_genpy"
+	@echo "... hector_gazebo_plugins_gencfg"
 	@echo "... imu_attitude_to_tf_node"
 	@echo "... pose_and_orientation_to_imu_node"
 	@echo "... hector_map_server"
@@ -7646,6 +7727,9 @@ help:
 	@echo "... _run_tests_robot_localization_rostest_test_test_robot_localization_estimator.test"
 	@echo "... geonav_transform"
 	@echo "... geonav_transform_node"
+	@echo "... geotf"
+	@echo "... geotf_package"
+	@echo "... demo_node"
 	@echo "... hector_mapping_generate_messages_py"
 	@echo "... hector_mapping"
 	@echo "... hector_mapping_gennodejs"
