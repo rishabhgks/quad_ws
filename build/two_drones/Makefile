@@ -66,50 +66,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/strip
+install/strip/fast: install/strip
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +88,50 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : install/strip/fast
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,19 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-two_drones/CMakeFiles/hover_node.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/hover_node.dir/rule
-.PHONY : two_drones/CMakeFiles/hover_node.dir/rule
+two_drones/CMakeFiles/takeoff_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/takeoff_node.dir/rule
+.PHONY : two_drones/CMakeFiles/takeoff_node.dir/rule
 
 # Convenience name for target.
-hover_node: two_drones/CMakeFiles/hover_node.dir/rule
+takeoff_node: two_drones/CMakeFiles/takeoff_node.dir/rule
 
-.PHONY : hover_node
+.PHONY : takeoff_node
 
 # fast build rule for target.
-hover_node/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/hover_node.dir/build.make two_drones/CMakeFiles/hover_node.dir/build
-.PHONY : hover_node/fast
+takeoff_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/takeoff_node.dir/build.make two_drones/CMakeFiles/takeoff_node.dir/build
+.PHONY : takeoff_node/fast
 
 # Convenience name for target.
 two_drones/CMakeFiles/obstacle_avoidance.dir/rule:
@@ -196,19 +196,34 @@ obstacle_avoidance/fast:
 .PHONY : obstacle_avoidance/fast
 
 # Convenience name for target.
-two_drones/CMakeFiles/takeoff_node.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/takeoff_node.dir/rule
-.PHONY : two_drones/CMakeFiles/takeoff_node.dir/rule
+two_drones/CMakeFiles/obstacle_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/obstacle_node.dir/rule
+.PHONY : two_drones/CMakeFiles/obstacle_node.dir/rule
 
 # Convenience name for target.
-takeoff_node: two_drones/CMakeFiles/takeoff_node.dir/rule
+obstacle_node: two_drones/CMakeFiles/obstacle_node.dir/rule
 
-.PHONY : takeoff_node
+.PHONY : obstacle_node
 
 # fast build rule for target.
-takeoff_node/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/takeoff_node.dir/build.make two_drones/CMakeFiles/takeoff_node.dir/build
-.PHONY : takeoff_node/fast
+obstacle_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/build
+.PHONY : obstacle_node/fast
+
+# Convenience name for target.
+two_drones/CMakeFiles/hover_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/hover_node.dir/rule
+.PHONY : two_drones/CMakeFiles/hover_node.dir/rule
+
+# Convenience name for target.
+hover_node: two_drones/CMakeFiles/hover_node.dir/rule
+
+.PHONY : hover_node
+
+# fast build rule for target.
+hover_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/hover_node.dir/build.make two_drones/CMakeFiles/hover_node.dir/build
+.PHONY : hover_node/fast
 
 src/hover_node.o: src/hover_node.cpp.o
 
@@ -264,6 +279,33 @@ src/obstacle_avoidance.cpp.s:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.s
 .PHONY : src/obstacle_avoidance.cpp.s
 
+src/obstacle_node.o: src/obstacle_node.cpp.o
+
+.PHONY : src/obstacle_node.o
+
+# target to build an object file
+src/obstacle_node.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/src/obstacle_node.cpp.o
+.PHONY : src/obstacle_node.cpp.o
+
+src/obstacle_node.i: src/obstacle_node.cpp.i
+
+.PHONY : src/obstacle_node.i
+
+# target to preprocess a source file
+src/obstacle_node.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/src/obstacle_node.cpp.i
+.PHONY : src/obstacle_node.cpp.i
+
+src/obstacle_node.s: src/obstacle_node.cpp.s
+
+.PHONY : src/obstacle_node.s
+
+# target to generate assembly for a file
+src/obstacle_node.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/src/obstacle_node.cpp.s
+.PHONY : src/obstacle_node.cpp.s
+
 src/takeoff_node.o: src/takeoff_node.cpp.o
 
 .PHONY : src/takeoff_node.o
@@ -297,22 +339,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... takeoff_node"
 	@echo "... list_install_components"
-	@echo "... install"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... hover_node"
+	@echo "... install/strip"
 	@echo "... obstacle_avoidance"
 	@echo "... install/local"
-	@echo "... takeoff_node"
-	@echo "... install/strip"
+	@echo "... obstacle_node"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... hover_node"
+	@echo "... edit_cache"
 	@echo "... src/hover_node.o"
 	@echo "... src/hover_node.i"
 	@echo "... src/hover_node.s"
 	@echo "... src/obstacle_avoidance.o"
 	@echo "... src/obstacle_avoidance.i"
 	@echo "... src/obstacle_avoidance.s"
+	@echo "... src/obstacle_node.o"
+	@echo "... src/obstacle_node.i"
+	@echo "... src/obstacle_node.s"
 	@echo "... src/takeoff_node.o"
 	@echo "... src/takeoff_node.i"
 	@echo "... src/takeoff_node.s"

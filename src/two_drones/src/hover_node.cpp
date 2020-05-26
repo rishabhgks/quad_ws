@@ -70,8 +70,8 @@ drone2.tester = n.advertise<geometry_msgs::Vector3>("drone2/yaw_vector", 1);
 drone1.target.x = 477511.763422;
 drone1.target.y = 5523139.13698;
 
-drone2.target.x = 477505.881938;
-drone2.target.y = 5523139.13698;
+drone2.target.x = drone1.target.x - 6;
+drone2.target.y = drone1.target.y;
 
 drone1.enableMotors(true);
 drone2.enableMotors(true);
@@ -230,11 +230,13 @@ void step(Drone_Mission &drone) {
     }
   }
   if(drone.state == 7 && drone.finished != true) {
-    if(fabs(drone.yaw - drone.theta) > 1.51 && fabs(drone.yaw - drone.theta) < 1.59) {
+    if(drone.theta_yaw_diff > C_PI)
+      drone.theta_yaw_diff = C_PI - drone.theta_yaw_diff;
+    if(fabs(drone.theta_yaw_diff) > 1.50 && fabs(drone.theta_yaw_diff) < 1.60) {
       drone.rotateToHeading = true;
       if(drone1.rotateToHeading == true && drone2.rotateToHeading == true) {
           drone.motor_msg.linear.x = 0.0;
-          drone.motor_msg.linear.y = -1*drone.sign*0.5;
+          drone.motor_msg.linear.y = drone.sign*0.8;
           drone.motor_msg.linear.z = 0.0;
           drone.motor_msg.angular.z = 0.0;
       } else {
@@ -244,15 +246,15 @@ void step(Drone_Mission &drone) {
         drone.motor_msg.angular.z = 0.0;
       }
     } else {
-      // drone.rotateToHeading = false;
+      drone.rotateToHeading = false;
       drone.motor_msg.linear.x = 0.0;
       drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = 0.0;
-      drone.motor_msg.angular.z = drone.sign*0.2;
+      drone.motor_msg.angular.z = (drone.theta_yaw_diff - (1.57*drone.sign))*0.2;
     }
     drone.move_drone.publish(drone.motor_msg);
-    ROS_INFO("%s: %f %f", drone.name.c_str(), drone.theta - drone.yaw, fabs(drone.theta - drone.yaw));
-    if(ros::Time::now().toSec() > 90) {
+    ROS_INFO("%s: %f %f", drone.name.c_str(), drone.theta_yaw_diff, fabs(drone.theta - drone.yaw));
+    if(drone.dist_x < 0.2 && drone.dist_y < 0.2) {
       drone.finished = true;
     }
   }
@@ -261,8 +263,8 @@ void step(Drone_Mission &drone) {
       drone.sign = 1;
     else
       drone.sign = -1;
-    if(fabs(drone.theta - drone.yaw) < 0.05) {
-      drone.motor_msg.linear.x = 0.8;
+    if(fabs(drone.theta_yaw_diff) < 0.05) {
+      drone.motor_msg.linear.x = 1.0;
       drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = 0.0;
       drone.motor_msg.angular.z = 0.0;
@@ -270,21 +272,11 @@ void step(Drone_Mission &drone) {
       drone.motor_msg.linear.x = 0.0;
       drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = 0.0;
-      drone.motor_msg.angular.z = (drone.theta - drone.yaw)*0.5;
+      drone.motor_msg.angular.z = (drone.theta_yaw_diff)*0.5;
     }
-    // if(drone.dist_x < 0.0)
-    //   drone.motor_msg.linear.x = 0.3;
-    // else
-    //   drone.motor_msg.linear.x = -0.3;
-    // if(drone.dist_y < 0.0)
-    //   drone.motor_msg.linear.y = 0.3;
-    // else
-    //   drone.motor_msg.linear.y = -0.3;
-    // drone.motor_msg.linear.z = 0.0;
-    // drone.motor_msg.angular.z = 0.0;
     drone.move_drone.publish(drone.motor_msg);
-    ROS_INFO("%s yaw - theta: %f", drone.name.c_str(), fabs(drone.yaw - drone.theta));
-    ROS_INFO("%f %f %f %f %f %f %f", drone.subOdom.pose.pose.position.x, drone.target.x, drone.subOdom.pose.pose.position.y, drone.target.y, drone.dist_x, drone.dist_y, drone.theta);
+    ROS_INFO("%s yaw - theta: %f", drone.name.c_str(), fabs(drone.theta_yaw_diff));
+    // ROS_INFO("%f %f %f %f %f %f %f", drone.subOdom.pose.pose.position.x, drone.target.x, drone.subOdom.pose.pose.position.y, drone.target.y, drone.dist_x, drone.dist_y, drone.theta);
     if(drone.dist_x < 0.1 && drone.dist_y < 0.1 && drone.dist_x > -0.1 && drone.dist_y > -0.1)
       drone.finished = true;
   }
@@ -328,6 +320,7 @@ void Drone_Mission::odomCallback(const nav_msgs::OdometryConstPtr& msg) {
   test.y = dist_y;
   test.z = theta;
   tester.publish(test);
+  theta_yaw_diff = theta - yaw;
 }
 
 void drone1_maintain_altitude(float height1, Pose &pose1_) {
@@ -509,9 +502,11 @@ void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
     case 7:
       if(drone1.finished == false) {
         drone1.sign = 1;
+        if(drone2.state == 7)
+          drone1.substate == 1;
         step(drone1);
       } else {
-        drone1.state = 6;
+        drone1.state = 2;
         drone1.finished = false;
         ROS_INFO("Done Turning to yaw");
       }
@@ -522,6 +517,8 @@ void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
         step(drone1);
       } else {
         drone1.state = 7;
+        drone1.target.x = waypoint.x;
+        drone1.target.y = waypoint.y;
         drone1.finished = false;
         ROS_INFO("Done reaching with gps");
       }
@@ -616,9 +613,11 @@ void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
     case 7:
       if(drone2.finished == false) {
         drone2.sign = -1;
+        if(drone1.state == 7)
+          drone2.substate == 1;
         step(drone2);
       } else {
-        drone2.state = 6;
+        drone2.state = 2;
         drone2.finished = false;
         ROS_INFO("Done turning to yaw State: %d", drone2.state);
       }
@@ -629,6 +628,8 @@ void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg) {
         step(drone2);
       } else {
         drone2.state = 7;
+        drone2.target.x = waypoint.x - 6;
+        drone2.target.y = waypoint.y;
         drone2.finished = false;
         ROS_INFO("Done reaching with gps");
       }

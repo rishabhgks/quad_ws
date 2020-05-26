@@ -34,18 +34,21 @@ class Drone_Mission{
 public:
     std::string name;
     int state;
+    int substate;
     int sign;
     bool rotateToHeading;
     bool finished;
     float mean_start_gps;
     float Y_POS;
+    float X_POS;
+    float theta_yaw_diff;
     float mean_start_mag_x;
     float direction;
     geometry_msgs::Vector3 target;
     nav_msgs::Odometry subOdom;
     geometry_msgs::Vector3 test;
 
-    Drone_Mission(std::string n) : name(n), state(0), finished(false), mean_start_gps(0.0), Y_POS(1.0)
+    Drone_Mission(std::string n) : name(n), state(0), substate(0), finished(false), mean_start_gps(0.0), Y_POS(1.0)
     {
         target.x = 0.0;
         target.y = 0.0;
@@ -108,9 +111,13 @@ void drone1_maintain_altitude(float height1, Pose &pose1_);
 
 void drone2_maintain_altitude(float height2, Pose &pose2_);
 
+void drone3_maintain_altitude(float height3, Pose &pose3_);
+
 void drone1_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
 
 void drone2_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
+
+void drone3_gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
 
 void doneCb(const actionlib::SimpleClientGoalState& state, const hector_uav_msgs::PoseResultConstPtr& result);
 
