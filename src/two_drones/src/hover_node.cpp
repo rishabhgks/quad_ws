@@ -231,12 +231,12 @@ void step(Drone_Mission &drone) {
   }
   if(drone.state == 7 && drone.finished != true) {
     if(drone.theta_yaw_diff > C_PI)
-      drone.theta_yaw_diff = C_PI - drone.theta_yaw_diff;
+      drone.theta_yaw_diff = drone.theta_yaw_diff - (2*C_PI);
     if(fabs(drone.theta_yaw_diff) > 1.50 && fabs(drone.theta_yaw_diff) < 1.60) {
       drone.rotateToHeading = true;
       if(drone1.rotateToHeading == true && drone2.rotateToHeading == true) {
           drone.motor_msg.linear.x = 0.0;
-          drone.motor_msg.linear.y = drone.sign*0.8;
+          drone.motor_msg.linear.y = drone.sign*0.7;
           drone.motor_msg.linear.z = 0.0;
           drone.motor_msg.angular.z = 0.0;
       } else {
@@ -250,7 +250,7 @@ void step(Drone_Mission &drone) {
       drone.motor_msg.linear.x = 0.0;
       drone.motor_msg.linear.y = 0.0;
       drone.motor_msg.linear.z = 0.0;
-      drone.motor_msg.angular.z = (drone.theta_yaw_diff - (1.57*drone.sign))*0.2;
+      drone.motor_msg.angular.z = (drone.theta_yaw_diff - (1.57*drone.sign))*0.5;
     }
     drone.move_drone.publish(drone.motor_msg);
     ROS_INFO("%s: %f %f", drone.name.c_str(), drone.theta_yaw_diff, fabs(drone.theta - drone.yaw));

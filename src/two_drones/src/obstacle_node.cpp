@@ -243,14 +243,14 @@ void step(Drone_Mission &drone) {
   }
   if(drone.state == 7 && drone.finished != true) {
     if(drone.theta_yaw_diff > C_PI)
-      drone.theta_yaw_diff = C_PI - drone.theta_yaw_diff;
+      drone.theta_yaw_diff = drone.theta_yaw_diff - (2*C_PI);
     if(fabs(drone.theta_yaw_diff) > 1.50 && fabs(drone.theta_yaw_diff) < 1.60) {
       drone.rotateToHeading = true;
       if(drone3.state == 0)
         drone3.state = 1;
       if(drone1.rotateToHeading == true && drone2.rotateToHeading == true && drone3.state == 2) {
           drone.motor_msg.linear.x = 0.0;
-          drone.motor_msg.linear.y = drone.sign*0.8;
+          drone.motor_msg.linear.y = drone.sign*0.7;
           drone.motor_msg.linear.z = 0.0;
           drone.motor_msg.angular.z = 0.0;
       } else {
