@@ -248,7 +248,7 @@ void step(Drone_Mission &drone) {
       drone.rotateToHeading = true;
       if(drone3.state == 0)
         drone3.state = 1;
-      if(drone1.rotateToHeading == true && drone2.rotateToHeading == true && drone3.state == 2) {
+      if(drone1.rotateToHeading == true && drone2.rotateToHeading == true && drone3.current_gps.altitude > 3.9) {
           drone.motor_msg.linear.x = 0.0;
           drone.motor_msg.linear.y = drone.sign*0.7;
           drone.motor_msg.linear.z = 0.0;
