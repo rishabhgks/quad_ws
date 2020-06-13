@@ -56,6 +56,29 @@ CMAKE_BINARY_DIR = /home/rishabh/quad_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -87,29 +110,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -166,6 +166,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+two_drones/CMakeFiles/obstacle_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/obstacle_node.dir/rule
+.PHONY : two_drones/CMakeFiles/obstacle_node.dir/rule
+
+# Convenience name for target.
+obstacle_node: two_drones/CMakeFiles/obstacle_node.dir/rule
+
+.PHONY : obstacle_node
+
+# fast build rule for target.
+obstacle_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/build
+.PHONY : obstacle_node/fast
+
+# Convenience name for target.
+two_drones/CMakeFiles/sara1_2_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/sara1_2_node.dir/rule
+.PHONY : two_drones/CMakeFiles/sara1_2_node.dir/rule
+
+# Convenience name for target.
+sara1_2_node: two_drones/CMakeFiles/sara1_2_node.dir/rule
+
+.PHONY : sara1_2_node
+
+# fast build rule for target.
+sara1_2_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_2_node.dir/build.make two_drones/CMakeFiles/sara1_2_node.dir/build
+.PHONY : sara1_2_node/fast
+
+# Convenience name for target.
+two_drones/CMakeFiles/sara1_1_node.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/sara1_1_node.dir/rule
+.PHONY : two_drones/CMakeFiles/sara1_1_node.dir/rule
+
+# Convenience name for target.
+sara1_1_node: two_drones/CMakeFiles/sara1_1_node.dir/rule
+
+.PHONY : sara1_1_node
+
+# fast build rule for target.
+sara1_1_node/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_1_node.dir/build.make two_drones/CMakeFiles/sara1_1_node.dir/build
+.PHONY : sara1_1_node/fast
+
+# Convenience name for target.
 two_drones/CMakeFiles/takeoff_node.dir/rule:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/takeoff_node.dir/rule
 .PHONY : two_drones/CMakeFiles/takeoff_node.dir/rule
@@ -194,21 +239,6 @@ obstacle_avoidance: two_drones/CMakeFiles/obstacle_avoidance.dir/rule
 obstacle_avoidance/fast:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/build
 .PHONY : obstacle_avoidance/fast
-
-# Convenience name for target.
-two_drones/CMakeFiles/obstacle_node.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 two_drones/CMakeFiles/obstacle_node.dir/rule
-.PHONY : two_drones/CMakeFiles/obstacle_node.dir/rule
-
-# Convenience name for target.
-obstacle_node: two_drones/CMakeFiles/obstacle_node.dir/rule
-
-.PHONY : obstacle_node
-
-# fast build rule for target.
-obstacle_node/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/build
-.PHONY : obstacle_node/fast
 
 # Convenience name for target.
 two_drones/CMakeFiles/hover_node.dir/rule:
@@ -306,6 +336,60 @@ src/obstacle_node.cpp.s:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/src/obstacle_node.cpp.s
 .PHONY : src/obstacle_node.cpp.s
 
+src/sara1_1_node.o: src/sara1_1_node.cpp.o
+
+.PHONY : src/sara1_1_node.o
+
+# target to build an object file
+src/sara1_1_node.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_1_node.dir/build.make two_drones/CMakeFiles/sara1_1_node.dir/src/sara1_1_node.cpp.o
+.PHONY : src/sara1_1_node.cpp.o
+
+src/sara1_1_node.i: src/sara1_1_node.cpp.i
+
+.PHONY : src/sara1_1_node.i
+
+# target to preprocess a source file
+src/sara1_1_node.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_1_node.dir/build.make two_drones/CMakeFiles/sara1_1_node.dir/src/sara1_1_node.cpp.i
+.PHONY : src/sara1_1_node.cpp.i
+
+src/sara1_1_node.s: src/sara1_1_node.cpp.s
+
+.PHONY : src/sara1_1_node.s
+
+# target to generate assembly for a file
+src/sara1_1_node.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_1_node.dir/build.make two_drones/CMakeFiles/sara1_1_node.dir/src/sara1_1_node.cpp.s
+.PHONY : src/sara1_1_node.cpp.s
+
+src/sara1_2_node.o: src/sara1_2_node.cpp.o
+
+.PHONY : src/sara1_2_node.o
+
+# target to build an object file
+src/sara1_2_node.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_2_node.dir/build.make two_drones/CMakeFiles/sara1_2_node.dir/src/sara1_2_node.cpp.o
+.PHONY : src/sara1_2_node.cpp.o
+
+src/sara1_2_node.i: src/sara1_2_node.cpp.i
+
+.PHONY : src/sara1_2_node.i
+
+# target to preprocess a source file
+src/sara1_2_node.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_2_node.dir/build.make two_drones/CMakeFiles/sara1_2_node.dir/src/sara1_2_node.cpp.i
+.PHONY : src/sara1_2_node.cpp.i
+
+src/sara1_2_node.s: src/sara1_2_node.cpp.s
+
+.PHONY : src/sara1_2_node.s
+
+# target to generate assembly for a file
+src/sara1_2_node.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f two_drones/CMakeFiles/sara1_2_node.dir/build.make two_drones/CMakeFiles/sara1_2_node.dir/src/sara1_2_node.cpp.s
+.PHONY : src/sara1_2_node.cpp.s
+
 src/takeoff_node.o: src/takeoff_node.cpp.o
 
 .PHONY : src/takeoff_node.o
@@ -339,14 +423,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... obstacle_node"
+	@echo "... sara1_2_node"
+	@echo "... sara1_1_node"
 	@echo "... takeoff_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... obstacle_avoidance"
 	@echo "... install/local"
-	@echo "... obstacle_node"
-	@echo "... install"
-	@echo "... rebuild_cache"
+	@echo "... obstacle_avoidance"
 	@echo "... test"
 	@echo "... hover_node"
 	@echo "... edit_cache"
@@ -359,6 +445,12 @@ help:
 	@echo "... src/obstacle_node.o"
 	@echo "... src/obstacle_node.i"
 	@echo "... src/obstacle_node.s"
+	@echo "... src/sara1_1_node.o"
+	@echo "... src/sara1_1_node.i"
+	@echo "... src/sara1_1_node.s"
+	@echo "... src/sara1_2_node.o"
+	@echo "... src/sara1_2_node.i"
+	@echo "... src/sara1_2_node.s"
 	@echo "... src/takeoff_node.o"
 	@echo "... src/takeoff_node.i"
 	@echo "... src/takeoff_node.s"

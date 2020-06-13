@@ -156,6 +156,20 @@ target_link_libraries(hover_node
   ${catkin_LIBRARIES}
 )
 
+add_executable(sara1_1_node src/sara1_1_node.cpp)
+
+target_link_libraries(sara1_1_node
+  ${catkin_LIBRARIES}
+)
+add_dependencies(sara1_1_node ${catkin_EXPORTED_TARGETS})
+
+add_executable(sara1_2_node src/sara1_2_node.cpp)
+
+target_link_libraries(sara1_2_node
+  ${catkin_LIBRARIES}
+)
+add_dependencies(sara1_2_node ${catkin_EXPORTED_TARGETS})
+
 add_executable(obstacle_node src/obstacle_node.cpp)
 
 target_link_libraries(obstacle_node

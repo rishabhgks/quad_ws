@@ -5093,6 +5093,45 @@ rviz_imu_plugin_automoc/fast:
 .PHONY : rviz_imu_plugin_automoc/fast
 
 #=============================================================================
+# Target rules for targets named obstacle_node
+
+# Build rule for target.
+obstacle_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 obstacle_node
+.PHONY : obstacle_node
+
+# fast build rule for target.
+obstacle_node/fast:
+	$(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/build
+.PHONY : obstacle_node/fast
+
+#=============================================================================
+# Target rules for targets named sara1_2_node
+
+# Build rule for target.
+sara1_2_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sara1_2_node
+.PHONY : sara1_2_node
+
+# fast build rule for target.
+sara1_2_node/fast:
+	$(MAKE) -f two_drones/CMakeFiles/sara1_2_node.dir/build.make two_drones/CMakeFiles/sara1_2_node.dir/build
+.PHONY : sara1_2_node/fast
+
+#=============================================================================
+# Target rules for targets named sara1_1_node
+
+# Build rule for target.
+sara1_1_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sara1_1_node
+.PHONY : sara1_1_node
+
+# fast build rule for target.
+sara1_1_node/fast:
+	$(MAKE) -f two_drones/CMakeFiles/sara1_1_node.dir/build.make two_drones/CMakeFiles/sara1_1_node.dir/build
+.PHONY : sara1_1_node/fast
+
+#=============================================================================
 # Target rules for targets named takeoff_node
 
 # Build rule for target.
@@ -5117,19 +5156,6 @@ obstacle_avoidance: cmake_check_build_system
 obstacle_avoidance/fast:
 	$(MAKE) -f two_drones/CMakeFiles/obstacle_avoidance.dir/build.make two_drones/CMakeFiles/obstacle_avoidance.dir/build
 .PHONY : obstacle_avoidance/fast
-
-#=============================================================================
-# Target rules for targets named obstacle_node
-
-# Build rule for target.
-obstacle_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obstacle_node
-.PHONY : obstacle_node
-
-# fast build rule for target.
-obstacle_node/fast:
-	$(MAKE) -f two_drones/CMakeFiles/obstacle_node.dir/build.make two_drones/CMakeFiles/obstacle_node.dir/build
-.PHONY : obstacle_node/fast
 
 #=============================================================================
 # Target rules for targets named hover_node
@@ -5653,9 +5679,11 @@ help:
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... map_msgs_generate_messages_py"
 	@echo "... rviz_imu_plugin_automoc"
+	@echo "... obstacle_node"
+	@echo "... sara1_2_node"
+	@echo "... sara1_1_node"
 	@echo "... takeoff_node"
 	@echo "... obstacle_avoidance"
-	@echo "... obstacle_node"
 	@echo "... hover_node"
 	@echo "... _run_tests_turtlebot_description"
 	@echo "... run_tests_turtlebot_description_gtest_turtlebot_description_test_urdf"
