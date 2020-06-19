@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/rishabh/quad_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -79,37 +67,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target test
+test/fast: test
 
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +89,49 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,109 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
 
 # Convenience name for target.
-control_msgs_generate_messages_nodejs: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+hector_quadrotor_controllers: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
 
-.PHONY : control_msgs_generate_messages_nodejs
+.PHONY : hector_quadrotor_controllers
 
 # fast build rule for target.
-control_msgs_generate_messages_nodejs/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
-.PHONY : control_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-control_toolbox_generate_messages_nodejs: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-
-.PHONY : control_toolbox_generate_messages_nodejs
-
-# fast build rule for target.
-control_toolbox_generate_messages_nodejs/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build
-.PHONY : control_toolbox_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_py: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
-
-.PHONY : control_msgs_generate_messages_py
-
-# fast build rule for target.
-control_msgs_generate_messages_py/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/build
-.PHONY : control_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_lisp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : control_msgs_generate_messages_lisp
-
-# fast build rule for target.
-control_msgs_generate_messages_lisp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
-.PHONY : control_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-
-# Convenience name for target.
-control_toolbox_generate_messages_py: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-
-.PHONY : control_toolbox_generate_messages_py
-
-# fast build rule for target.
-control_toolbox_generate_messages_py/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/build
-.PHONY : control_toolbox_generate_messages_py/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-control_toolbox_generate_messages_cpp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
-
-.PHONY : control_toolbox_generate_messages_cpp
-
-# fast build rule for target.
-control_toolbox_generate_messages_cpp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build
-.PHONY : control_toolbox_generate_messages_cpp/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_eus: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_eus
-
-# fast build rule for target.
-visualization_msgs_generate_messages_eus/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
-.PHONY : visualization_msgs_generate_messages_eus/fast
+hector_quadrotor_controllers/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build
+.PHONY : hector_quadrotor_controllers/fast
 
 # Convenience name for target.
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_lisp.dir/rule:
@@ -286,49 +196,19 @@ control_toolbox_generate_messages_lisp/fast:
 .PHONY : control_toolbox_generate_messages_lisp/fast
 
 # Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_cpp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+control_toolbox_generate_messages_cpp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_cpp
+.PHONY : control_toolbox_generate_messages_cpp
 
 # fast build rule for target.
-visualization_msgs_generate_messages_cpp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
-.PHONY : visualization_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_nodejs: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-.PHONY : visualization_msgs_generate_messages_nodejs/fast
+control_toolbox_generate_messages_cpp/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build
+.PHONY : control_toolbox_generate_messages_cpp/fast
 
 # Convenience name for target.
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
@@ -346,19 +226,34 @@ control_msgs_generate_messages_eus/fast:
 .PHONY : control_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_py: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+control_toolbox_gencfg: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_py
+.PHONY : control_toolbox_gencfg
 
 # fast build rule for target.
-visualization_msgs_generate_messages_py/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
-.PHONY : visualization_msgs_generate_messages_py/fast
+control_toolbox_gencfg/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/build
+.PHONY : control_toolbox_gencfg/fast
+
+# Convenience name for target.
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
+
+# Convenience name for target.
+control_toolbox_generate_messages_py: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
+
+.PHONY : control_toolbox_generate_messages_py
+
+# fast build rule for target.
+control_toolbox_generate_messages_py/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_py.dir/build
+.PHONY : control_toolbox_generate_messages_py/fast
 
 # Convenience name for target.
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_eus.dir/rule:
@@ -376,19 +271,49 @@ control_toolbox_generate_messages_eus/fast:
 .PHONY : control_toolbox_generate_messages_eus/fast
 
 # Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-hector_quadrotor_controllers: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/rule
+control_msgs_generate_messages_lisp: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : hector_quadrotor_controllers
+.PHONY : control_msgs_generate_messages_lisp
 
 # fast build rule for target.
-hector_quadrotor_controllers/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build
-.PHONY : hector_quadrotor_controllers/fast
+control_msgs_generate_messages_lisp/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
+.PHONY : control_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_py: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+
+.PHONY : control_msgs_generate_messages_py
+
+# fast build rule for target.
+control_msgs_generate_messages_py/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_py.dir/build
+.PHONY : control_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+control_toolbox_generate_messages_nodejs: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
+
+.PHONY : control_toolbox_generate_messages_nodejs
+
+# fast build rule for target.
+control_toolbox_generate_messages_nodejs/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build
+.PHONY : control_toolbox_generate_messages_nodejs/fast
 
 # Convenience name for target.
 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule:
@@ -406,19 +331,19 @@ control_msgs_generate_messages_cpp/fast:
 .PHONY : control_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
-.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
+hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+.PHONY : hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-control_toolbox_gencfg: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/rule
+control_msgs_generate_messages_nodejs: hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : control_toolbox_gencfg
+.PHONY : control_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-control_toolbox_gencfg/fast:
-	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_toolbox_gencfg.dir/build
-.PHONY : control_toolbox_gencfg/fast
+control_msgs_generate_messages_nodejs/fast:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
+.PHONY : control_msgs_generate_messages_nodejs/fast
 
 src/attitude_controller.o: src/attitude_controller.cpp.o
 
@@ -447,6 +372,87 @@ src/attitude_controller.cpp.s:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/attitude_controller.cpp.s
 .PHONY : src/attitude_controller.cpp.s
 
+src/motor_controller.o: src/motor_controller.cpp.o
+
+.PHONY : src/motor_controller.o
+
+# target to build an object file
+src/motor_controller.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.o
+.PHONY : src/motor_controller.cpp.o
+
+src/motor_controller.i: src/motor_controller.cpp.i
+
+.PHONY : src/motor_controller.i
+
+# target to preprocess a source file
+src/motor_controller.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.i
+.PHONY : src/motor_controller.cpp.i
+
+src/motor_controller.s: src/motor_controller.cpp.s
+
+.PHONY : src/motor_controller.s
+
+# target to generate assembly for a file
+src/motor_controller.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/motor_controller.cpp.s
+.PHONY : src/motor_controller.cpp.s
+
+src/pid.o: src/pid.cpp.o
+
+.PHONY : src/pid.o
+
+# target to build an object file
+src/pid.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.o
+.PHONY : src/pid.cpp.o
+
+src/pid.i: src/pid.cpp.i
+
+.PHONY : src/pid.i
+
+# target to preprocess a source file
+src/pid.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.i
+.PHONY : src/pid.cpp.i
+
+src/pid.s: src/pid.cpp.s
+
+.PHONY : src/pid.s
+
+# target to generate assembly for a file
+src/pid.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pid.cpp.s
+.PHONY : src/pid.cpp.s
+
+src/pose_controller.o: src/pose_controller.cpp.o
+
+.PHONY : src/pose_controller.o
+
+# target to build an object file
+src/pose_controller.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.o
+.PHONY : src/pose_controller.cpp.o
+
+src/pose_controller.i: src/pose_controller.cpp.i
+
+.PHONY : src/pose_controller.i
+
+# target to preprocess a source file
+src/pose_controller.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.i
+.PHONY : src/pose_controller.cpp.i
+
+src/pose_controller.s: src/pose_controller.cpp.s
+
+.PHONY : src/pose_controller.s
+
+# target to generate assembly for a file
+src/pose_controller.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/pose_controller.cpp.s
+.PHONY : src/pose_controller.cpp.s
+
 src/position_controller.o: src/position_controller.cpp.o
 
 .PHONY : src/position_controller.o
@@ -473,6 +479,60 @@ src/position_controller.s: src/position_controller.cpp.s
 src/position_controller.cpp.s:
 	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/position_controller.cpp.s
 .PHONY : src/position_controller.cpp.s
+
+src/quadrotor_interface.o: src/quadrotor_interface.cpp.o
+
+.PHONY : src/quadrotor_interface.o
+
+# target to build an object file
+src/quadrotor_interface.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.o
+.PHONY : src/quadrotor_interface.cpp.o
+
+src/quadrotor_interface.i: src/quadrotor_interface.cpp.i
+
+.PHONY : src/quadrotor_interface.i
+
+# target to preprocess a source file
+src/quadrotor_interface.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.i
+.PHONY : src/quadrotor_interface.cpp.i
+
+src/quadrotor_interface.s: src/quadrotor_interface.cpp.s
+
+.PHONY : src/quadrotor_interface.s
+
+# target to generate assembly for a file
+src/quadrotor_interface.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/quadrotor_interface.cpp.s
+.PHONY : src/quadrotor_interface.cpp.s
+
+src/twist_controller.o: src/twist_controller.cpp.o
+
+.PHONY : src/twist_controller.o
+
+# target to build an object file
+src/twist_controller.cpp.o:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.o
+.PHONY : src/twist_controller.cpp.o
+
+src/twist_controller.i: src/twist_controller.cpp.i
+
+.PHONY : src/twist_controller.i
+
+# target to preprocess a source file
+src/twist_controller.cpp.i:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.i
+.PHONY : src/twist_controller.cpp.i
+
+src/twist_controller.s: src/twist_controller.cpp.s
+
+.PHONY : src/twist_controller.s
+
+# target to generate assembly for a file
+src/twist_controller.cpp.s:
+	cd /home/rishabh/quad_ws/build && $(MAKE) -f hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/build.make hector_quadrotor/hector_quadrotor_controllers/CMakeFiles/hector_quadrotor_controllers.dir/src/twist_controller.cpp.s
+.PHONY : src/twist_controller.cpp.s
 
 src/velocity_controller.o: src/velocity_controller.cpp.o
 
@@ -507,36 +567,46 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... install/local"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... hector_quadrotor_controllers"
+	@echo "... control_toolbox_generate_messages_lisp"
+	@echo "... control_toolbox_generate_messages_cpp"
+	@echo "... control_msgs_generate_messages_eus"
+	@echo "... control_toolbox_gencfg"
+	@echo "... control_toolbox_generate_messages_py"
+	@echo "... control_toolbox_generate_messages_eus"
+	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_py"
+	@echo "... control_toolbox_generate_messages_nodejs"
+	@echo "... edit_cache"
+	@echo "... control_msgs_generate_messages_cpp"
 	@echo "... install"
 	@echo "... control_msgs_generate_messages_nodejs"
-	@echo "... control_toolbox_generate_messages_nodejs"
-	@echo "... control_msgs_generate_messages_py"
-	@echo "... control_msgs_generate_messages_lisp"
-	@echo "... control_toolbox_generate_messages_py"
-	@echo "... control_toolbox_generate_messages_cpp"
-	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... control_toolbox_generate_messages_lisp"
-	@echo "... visualization_msgs_generate_messages_cpp"
-	@echo "... rebuild_cache"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... control_msgs_generate_messages_eus"
-	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... edit_cache"
-	@echo "... control_toolbox_generate_messages_eus"
-	@echo "... hector_quadrotor_controllers"
-	@echo "... control_msgs_generate_messages_cpp"
-	@echo "... install/local"
-	@echo "... control_toolbox_gencfg"
-	@echo "... test"
 	@echo "... src/attitude_controller.o"
 	@echo "... src/attitude_controller.i"
 	@echo "... src/attitude_controller.s"
+	@echo "... src/motor_controller.o"
+	@echo "... src/motor_controller.i"
+	@echo "... src/motor_controller.s"
+	@echo "... src/pid.o"
+	@echo "... src/pid.i"
+	@echo "... src/pid.s"
+	@echo "... src/pose_controller.o"
+	@echo "... src/pose_controller.i"
+	@echo "... src/pose_controller.s"
 	@echo "... src/position_controller.o"
 	@echo "... src/position_controller.i"
 	@echo "... src/position_controller.s"
+	@echo "... src/quadrotor_interface.o"
+	@echo "... src/quadrotor_interface.i"
+	@echo "... src/quadrotor_interface.s"
+	@echo "... src/twist_controller.o"
+	@echo "... src/twist_controller.i"
+	@echo "... src/twist_controller.s"
 	@echo "... src/velocity_controller.o"
 	@echo "... src/velocity_controller.i"
 	@echo "... src/velocity_controller.s"

@@ -1,0 +1,23 @@
+
+J
+vector3d.protogazebo.msgs"+
+Vector3d	
+x (	
+y (	
+z (
+Å
+datagram.proto
+adhoc.msgsvector3d.proto"“
+Datagram
+
+robot_name (	
+src_address (
+dst_address (
+hops (
+index (
+time (
+data (	
+	dist_comm (
+dist_motion	 ('
+prev_loc
+ (2.gazebo.msgs.Vector3d

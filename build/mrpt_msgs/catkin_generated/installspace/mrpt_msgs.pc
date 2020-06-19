@@ -1,0 +1,8 @@
+prefix=/home/rishabh/quad_ws/install
+
+Name: mrpt_msgs
+Description: Description of mrpt_msgs
+Version: 0.1.23
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs message_runtime sensor_msgs std_msgs

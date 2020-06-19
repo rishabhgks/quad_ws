@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/rishabh/quad_ws/devel/lib/libQuadrotorTunnelNavProtobuf.a  CMakeFiles/QuadrotorTunnelNavProtobuf.dir/home/rishabh/quad_ws/devel/include/quadrotor_tunnel_nav/protobuf/datagram.pb.cc.o CMakeFiles/QuadrotorTunnelNavProtobuf.dir/home/rishabh/quad_ws/devel/include/quadrotor_tunnel_nav/protobuf/siminfo.pb.cc.o CMakeFiles/QuadrotorTunnelNavProtobuf.dir/home/rishabh/quad_ws/devel/include/quadrotor_tunnel_nav/protobuf/vector3d.pb.cc.o
+/usr/bin/ranlib /home/rishabh/quad_ws/devel/lib/libQuadrotorTunnelNavProtobuf.a

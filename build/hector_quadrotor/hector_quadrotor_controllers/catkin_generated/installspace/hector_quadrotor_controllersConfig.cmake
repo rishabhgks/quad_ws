@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(hector_quadrotor_controllers_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "include " STREQUAL " ")
   set(hector_quadrotor_controllers_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "include")
   if(NOT "https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/hector_quadrotor_controller " STREQUAL " ")

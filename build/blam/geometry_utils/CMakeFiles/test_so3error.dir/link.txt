@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/test_so3error.dir/tests/test_so3error.cc.o  -o /home/rishabh/quad_ws/devel/lib/geometry_utils/test_so3error -rdynamic -lboost_unit_test_framework 

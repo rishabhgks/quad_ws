@@ -68,6 +68,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/hector_quadrotor_controllers" TYPE DIRECTORY FILES "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/include/hector_quadrotor_controllers/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_quadrotor_controllers" TYPE DIRECTORY FILES
     "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/launch"
     "/home/rishabh/quad_ws/src/hector_quadrotor/hector_quadrotor_controllers/params"
